@@ -2,7 +2,6 @@
 
 -- insert a new house
 INSERT INTO house(
-	id,
 	style,
 	constructed,
 	purchased,
@@ -14,7 +13,6 @@ INSERT INTO house(
 	address_id
 )
 VALUES(
-	@id_input,
 	@style_input,
 	@constructed_input,
 	@purchased_input,
