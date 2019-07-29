@@ -10,8 +10,8 @@ class Company:
             self.occs = occFile.readlines()
     
     def next(self):
-        return "{}'s {} {}s".format(
-            random.choice(self.names),
-            random.choice(self.adj),
-            random.choice(self.occs)
+        return "{}\'s {} {}s".format(
+            random.choice(self.names).strip(),
+            random.choice(self.adj).strip(),
+            random.choice(self.occs).strip()
         )

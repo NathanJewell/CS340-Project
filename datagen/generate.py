@@ -33,12 +33,13 @@ def generate():
         outputFolder, et, end
     )
 
-    formatString = "LOAD DATA LOCAL INFILE \'{}\' \
-        INTO TABLE {} \
-        FIELDS TERMINATED BY \',\' \
-        LINES TERMINATED BY \'\\n\' \
-        IGNORE 1 LINES \
-        ({});"
+    formatString = ("LOAD DATA LOCAL INFILE \'{}\'"
+        " INTO TABLE {}"
+        " FIELDS TERMINATED BY \',\'"
+        " LINES TERMINATED BY \'\\n\'"
+        " IGNORE 1 LINES"
+        " ({});"
+    )
 
     formLoadStatement = lambda et, of, cols : formatString.format(
         of, #output file
@@ -53,6 +54,7 @@ def generate():
         with open(outputFile, "w+") as output:
             csvWriter = csv.writer(output, delimiter=',')
             csvWriter.writerows(values)
+        loadStatements.append(loadStatement)
         
     with open(makeOutputFile("load", "sql"), "w+") as sqlLoad:
         for statement in loadStatements:

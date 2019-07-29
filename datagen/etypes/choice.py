@@ -4,7 +4,7 @@ class Choice:
     def __init__(self, config):
         self.type = config["type"]
 
-        delimiter = self.type["del"] if "del" in self.type else ","
+        delimiter = self.type["del"] if "del" in self.type else " "
         self.choices = self.type["choices"].split(delimiter)
 
         self.dist = config["distribution"] if "distribution" in config else None
