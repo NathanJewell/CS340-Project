@@ -5,7 +5,7 @@
 SELECT H.style, H.constructed, H.purchased, H.bedrooms, H.bathrooms, H.sqft,
 	H.levels, H.house_value 
 FROM house H
-INNER JOIN address
+INNER JOIN address A
 	ON H.id = 
 		(SELECT A.id FROM address A WHERE number LIKE '%' + @number_input + '%' 
  		AND streetName LIKE '%' + @streetName_input + '%' AND city LIKE '%' + 
