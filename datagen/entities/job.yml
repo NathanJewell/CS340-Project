@@ -1,0 +1,32 @@
+attributes:
+  - title:
+      type:
+        class: "filelist"
+        file: "data/occupations.txt"
+      distribution:
+        random: True
+        unique: False
+  - income:
+      type:
+        class: "number"
+        min: 1000
+        max: 1000000
+      distribution:
+        random: True
+        unique: False
+  - company:
+      type:
+        class: "company"
+      distribution:
+        random: True
+        unique: False
+        limit: 50
+  - education:
+      default: NULL
+      type:
+        class: "choice"
+        choices: "Trade Highschool BS MS PHD MD JD"
+      distribution:
+        random: True
+        unique: False
+        required: False

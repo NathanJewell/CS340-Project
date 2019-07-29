@@ -1,0 +1,71 @@
+attributes:
+  - style: 
+      type:
+        class: "choice"
+        choices: "Gothic Postmodern Brutalist Modern Beat-up Victorian Colonial Neoclassical Art-Deco"
+        delimeter: ' '
+      distribution:
+        random: True
+        unique: False
+  - constructed:
+        type:
+          class: "year"
+        distribution:
+          random: True
+          unique: False
+  - purchased:
+      type:
+        class: "year"
+      distribution:
+        random: True
+        unique: False
+  - bedrooms:
+      type:
+        class: "number"
+        min: 0
+        max: 8
+      distribution:
+        random: True
+        unique: False
+  - bathrooms:
+      type:
+        class: "number"
+        min: 1
+        max: 5
+        step: .5
+      distribution:
+        random: True
+        unique: False
+  - sqft:
+      type:
+        class: "number"
+        min: 100
+        max: 10000
+      distribution:
+        random: True
+        unique: False
+  - levels:
+      type:
+        class: "number"
+        min: 1
+        max: 4
+      distribution:
+        random: True
+        unique: False
+  - value:
+      type:
+        class: "number"
+        min: 10000
+        max: 10000000
+      distribution:
+        random: True
+        unique: False
+  - address:
+      type:
+        class: "reference"
+        target: "address"
+      distribution:
+        random: True
+        unique: True
+
+    

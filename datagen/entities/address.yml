@@ -1,0 +1,81 @@
+attributes:
+  - number:
+    type: 
+      class: "number"
+      min: 100
+      max: 100000
+    distribution:
+      unique: True 
+      random: True
+      limit: 0
+  - direction:
+      default: NULL
+      type: 
+        class: "choice"
+        choices: "N NE E SE S SW W NW"
+        del: ' '
+      distribution:
+        unique: False
+        random: True
+        required: False
+        limit: 0
+  - streetName:
+      type:
+        class: "filelist"
+        file: "data/nouns.txt"
+      distribution:
+        unique: False
+        random: True
+        limit: 10
+  - suffix:
+      type: 
+        class: "choice"
+        choices: "Avenue Court Street Lane Estate Beach Commons Gardens Place Road Vista Ridge"
+        del: ' '
+  - unit:
+      default: NULL
+      type:
+        class: "number"
+        min: 1
+        max: 0
+      distribution:
+        unique: False
+        random: False
+      required: False
+  - city:
+      type:
+        class: "filelist"
+        file: "data/world-cities.csv"
+        col: "0"
+      distribution:
+        unique: False
+        random: True
+        limit: 2
+  - state:
+      type:
+        class: "filelist"
+        file: "data/states.csv"
+        col: "0"
+      distribution:
+        unique: False
+        random: True
+        limit: 1
+  - postalCode:
+      type: 
+        class: "number"
+        min: 10000
+        max: 99999
+      distribution:
+        unique: False
+        random: True
+        limit: 1
+  - house:
+      type:
+        class: "reference"
+        target: "house"
+      distribution:
+        random: True
+        unique: True
+
+
+

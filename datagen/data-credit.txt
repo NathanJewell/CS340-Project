@@ -2,3 +2,7 @@ Adjectives courtesy of: https://gist.githubusercontent.com/hugsy/8910dc78d208e40
 Nouns courtesy of: https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Nouns-All.txt
 Verbs courtesy of: https://raw.githubusercontent.com/taikuukaits/SimpleWordlists/master/Wordlist-Verbs-All.txt
 Names: https://github.com/dominictarr/random-name
+World Cities: https://github.com/datasets/world-cities
+US States: 
+https://github.com/stefanbinder/countries-states/blob/master/countries.json
+Occupations: https://github.com/johnlsheridan/occupations.git

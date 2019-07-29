@@ -1,0 +1,28 @@
+attributes:
+  - fname:
+    type:
+      class: "firstName"
+    distribution:
+      unique: False
+      random: True
+  - lname:
+      type:
+        class: "lastName"
+      distribution:
+        unique: False
+        random: True
+        limit: 100
+  - job: 
+      type:
+        class: "reference"
+        target: "job"
+      distribution:
+        unique: False
+        random: True
+  - home:
+      type:
+        class: "reference"
+        target: "house"
+      distribution:
+        unique: False
+        random: True

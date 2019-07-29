@@ -1,0 +1,10 @@
+db:
+  entities:
+    - address:
+        count: 100
+    - house:
+        count: 100
+    - job:
+        count: 10
+    - person:
+        count: 300
