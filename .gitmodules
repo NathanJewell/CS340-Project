@@ -1,0 +1,6 @@
+[submodule "datagen/City-Name-Generation-using-LSTM-and-TF"]
+	path = datagen/City-Name-Generation-using-LSTM-and-TF
+	url = https://github.com/CihanBosnali/City-Name-Generation-using-LSTM-and-TF.git
+[submodule "datagen/rrad"]
+	path = datagen/rrad
+	url = https://github.com/EthanRBrown/rrad
