@@ -1,13 +1,13 @@
 attributes:
   - number:
-    type: 
-      class: "number"
-      min: 100
-      max: 100000
-    distribution:
-      unique: True 
-      random: True
-      limit: 0
+      type: 
+        class: "number"
+        min: 100
+        max: 100000
+      distribution:
+        unique: True 
+        random: True
+        limit: 0
   - direction:
       default: NULL
       type: 
@@ -54,7 +54,7 @@ attributes:
   - state:
       type:
         class: "filelist"
-        file: "data/states.csv"
+        file: "data/states.txt"
         col: "0"
       distribution:
         unique: False

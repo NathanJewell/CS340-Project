@@ -1,12 +1,12 @@
 import yaml
-import entity
+from entity import Entity
 import csv
 import datetime
 import os
 
 def generate():
     config = None
-    with open("dbconfig.ylm", "r") as configFile:
+    with open("dbconfig.yml", "r") as configFile:
         try:
             config = yaml.safe_load(configFile)
         except yaml.YAMLError as e:
@@ -14,7 +14,8 @@ def generate():
     
     #initialize entities for the DB
     entityMap = {}
-    for entityType, entityAtt in yaml["db"]["entities"].items():
+    for entity in config["db"]["entities"]:
+        entityType, entityAtt = next(iter(entity.items()))
         entityMap[entityType] = Entity(entityType, entityAtt["count"])
     
     #generate data for each entity
@@ -42,11 +43,11 @@ def generate():
     formLoadStatement = lambda et, of, cols : formatString.format(
         of, #output file
         et, #entity name is table name
-        cols.join(", ")
+        ", ".join(cols)
     )
 
     loadStatements = []
-    for et, values in entityValues.items()
+    for et, values in entityValues.items():
         outputFile = makeOutputFile(et)
         loadStatement = formLoadStatement(et, outputFile, values[0])
         with open(outputFile, "w+") as output:

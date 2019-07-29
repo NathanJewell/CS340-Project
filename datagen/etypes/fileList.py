@@ -1,14 +1,16 @@
-class fileList:
+import random
+
+class FileList:
     def __init__(self, config):
         self.type = config["type"]
         self.dist = config["distribution"]
 
-        self.file = type["file"]
+        self.file = self.type["file"]
         self.ext = self.file.split(".")[-1] #we will only support csv and txt for now
 
-        self.random = dist["random"] if "random" in dist else False
-        self.unique = dist["unique"] if "unique" in dist else False
-        self.limit = dist["limit"] if "limit" in dist else 0
+        self.random = self.dist["random"] if "random" in self.dist else False
+        self.unique = self.dist["unique"] if "unique" in self.dist else False
+        self.limit = self.dist["limit"] if "limit" in self.dist else 0
         
         self.used = set()
         
@@ -16,7 +18,7 @@ class fileList:
             self.choices = data.readlines()
             if self.ext == "csv":
                 #column must be specified when loading from csv (0 indexed)
-                self.choices = [line.split(",")[type["col"]] for line in self.choices]
+                self.choices = [line.split(",")[int(self.type["col"])] for line in self.choices]
     
     def next(self):
         choice = random.choice(self.choices)
@@ -27,10 +29,10 @@ class fileList:
             self.used.add(num)
         elif self.limit != 0:
             if len(self.used) >= self.limit:
-                choice = random.choice(self.used)
+                choice = random.choice(list(self.used))
             self.used.add(choice)
         
-        return num
+        return choice.strip()
 
 
 

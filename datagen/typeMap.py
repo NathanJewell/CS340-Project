@@ -2,15 +2,13 @@ from types import *
 
 typeMap = {
     "choice" : Choice,
-    "city" : City,
     "company" : Company,
-    "date" : Date,
+    "year" : Year,
     "fileList" : FileList,
-    "firstName" : FirstName,
-    "lastName" : LastName,
     "number" : Number,
     "profession" : Profession,
     "street" : Street
+    "reference" : Reference
 }
 
 def getTypeInstance(typeString, config):

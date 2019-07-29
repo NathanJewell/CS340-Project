@@ -1,9 +1,12 @@
 import random
+import decimal
 
 class Number:
     def __init__(self, config):
         self.min = config["type"]["min"]
         self.max = config["type"]["max"]
+        if self.max == 0:
+            self.max = 1000000000
         self.step = config["type"]["step"] if "step" in config["type"] else 1
 
         dist = config["distribution"]
@@ -12,10 +15,18 @@ class Number:
         
         self.used = set()
 
+        self.stepratio = 1 / self.step
+        self.min *= self.stepratio
+        self.max *= self.stepratio
+
     def next(self):
-        num = self.randrange(self.min, self.max, self.step)
+        num = random.randrange(self.min, self.max, 1)
         if self.unique:
             while num in self.used:
-                num = self.randrange(self.min, self.max, self.step)
+                num = random.randrange(self.min, self.max, self.step)
             self.used.add(num)
+        
+        lownum = num / self.stepratio
+        if lownum == num:
+            return int(lownum)
         return num

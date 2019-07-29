@@ -1,13 +1,15 @@
 attributes:
   - fname:
-    type:
-      class: "firstName"
-    distribution:
-      unique: False
-      random: True
+      type:
+        class: "filelist"
+        file: "data/first-names.txt"
+      distribution:
+        unique: False
+        random: True
   - lname:
       type:
-        class: "lastName"
+        class: "filelist"
+        file: "data/names.txt"
       distribution:
         unique: False
         random: True
