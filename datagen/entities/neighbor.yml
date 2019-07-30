@@ -1,0 +1,6 @@
+tablereference:
+  keys:
+    - pida:
+        entity: person
+    - pidb:
+        entity: person

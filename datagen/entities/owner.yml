@@ -1,0 +1,6 @@
+tablereference:
+  keys:
+    - oid:
+        entity: person
+    - hid:
+        entity: house

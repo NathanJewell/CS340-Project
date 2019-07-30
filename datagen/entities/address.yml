@@ -1,4 +1,8 @@
 attributes:
+  - id:
+      type:
+        class: "increment"
+        step: 1
   - number:
       type: 
         class: "number"
@@ -72,10 +76,6 @@ attributes:
   - house:
       type:
         class: "reference"
-        target: "house"
-      distribution:
-        random: True
-        unique: True
-
+        entity: house
 
 

@@ -14,9 +14,16 @@ def generate():
     
     #initialize entities for the DB
     entityMap = {}
+
+    counts = {}
     for entity in config["db"]["entities"]:
         entityType, entityAtt = next(iter(entity.items()))
-        entityMap[entityType] = Entity(entityType, entityAtt["count"])
+        counts[entityType] = entityAtt["count"] 
+    print(counts)
+
+    for entity in config["db"]["entities"]:
+        entityType, entityAtt = next(iter(entity.items()))
+        entityMap[entityType] = Entity(entityType, counts)
     
     #generate data for each entity
     entityValues = {}

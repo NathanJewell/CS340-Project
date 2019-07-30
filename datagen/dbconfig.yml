@@ -5,6 +5,10 @@ db:
     - house:
         count: 100
     - job:
-        count: 10
+        count: 500
     - person:
         count: 300
+    - owner:
+        count: 100
+    - neighbor:
+        count: 100

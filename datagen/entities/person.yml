@@ -1,4 +1,8 @@
 attributes:
+  - id:
+      type:
+        class: "increment"
+        step: 1
   - fname:
       type:
         class: "filelist"
@@ -16,15 +20,9 @@ attributes:
         limit: 100
   - job: 
       type:
-        class: "reference"
-        target: "job"
-      distribution:
-        unique: False
-        random: True
+        class: reference
+        entity: job
   - home:
       type:
-        class: "reference"
-        target: "house"
-      distribution:
-        unique: False
-        random: True
+        class: reference
+        entity: house

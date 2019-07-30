@@ -1,4 +1,8 @@
 attributes:
+  - id:
+      type:
+        class: "increment"
+        step: 1
   - style: 
       type:
         class: "choice"
@@ -63,9 +67,5 @@ attributes:
   - address:
       type:
         class: "reference"
-        target: "address"
-      distribution:
-        random: True
-        unique: True
-
+        entity: address
     

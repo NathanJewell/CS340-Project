@@ -1,4 +1,8 @@
 attributes:
+  - id:
+      type:
+        class: "increment"
+        step: 1
   - title:
       type:
         class: "filelist"

@@ -1,4 +1,0 @@
-LOAD DATA LOCAL INFILE './generated/output2019-07-29T13:08:01/person.csv'INTO TABLE personFIELDS TERMINATED BY ','LINES TERMINATED BY '\n'IGNORE 1 LINES(fname, lname, job, home);
-LOAD DATA LOCAL INFILE './generated/output2019-07-29T13:08:01/house.csv'INTO TABLE houseFIELDS TERMINATED BY ','LINES TERMINATED BY '\n'IGNORE 1 LINES(style, constructed, purchased, bedrooms, bathrooms, sqft, levels, value, address);
-LOAD DATA LOCAL INFILE './generated/output2019-07-29T13:08:01/job.csv'INTO TABLE jobFIELDS TERMINATED BY ','LINES TERMINATED BY '\n'IGNORE 1 LINES(title, income, company, education);
-LOAD DATA LOCAL INFILE './generated/output2019-07-29T13:08:01/address.csv'INTO TABLE addressFIELDS TERMINATED BY ','LINES TERMINATED BY '\n'IGNORE 1 LINES(number, direction, streetName, suffix, unit, city, state, postalCode, house);
