@@ -16,4 +16,4 @@ class Choice:
         self.used = []
     
     def next(self):
-        return random.choice(self.choices)
+        return "'{}'".format(random.choice(self.choices))

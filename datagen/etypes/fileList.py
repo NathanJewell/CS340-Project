@@ -32,7 +32,7 @@ class FileList:
                 choice = random.choice(list(self.used))
             self.used.add(choice)
         
-        return choice.strip().capitalize()
+        return "'{}'".format(choice.strip().capitalize())
 
 
 
