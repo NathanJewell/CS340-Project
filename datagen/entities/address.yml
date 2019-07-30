@@ -73,9 +73,4 @@ attributes:
         unique: False
         random: True
         limit: 1
-  - house:
-      type:
-        class: "reference"
-        entity: house
-
 

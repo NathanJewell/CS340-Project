@@ -1,101 +1,101 @@
-id,number,direction,streetName,suffix,unit,city,state,postalCode,house
-1,60118,'NE','Epidotes','Ridge',910166727,'Dīnānagar','Minnesota',29076,
-2,79238,'NE','Cashes','Estate',47999483,'Piteå','Minnesota',58619,
-3,60599,'N','Pubescence','Street',993344289,'Piteå','Minnesota',34232,
-4,28666,'S','Stigmatizations','Road',645572524,'Piteå','Minnesota',82676,
-5,12368,'NW','Microprocessors','Commons',492320014,'Piteå','Minnesota',66431,
-6,36375,'E','Despairs','Court',453130847,'Piteå','Minnesota',14445,
-7,73144,'N','Laggen','Avenue',551778576,'Dīnānagar','Minnesota',97417,
-8,50416,'SW','Limitations','Lane',932807797,'Piteå','Minnesota',87837,
-9,13990,'NE','Countershading','Gardens',441523335,'Piteå','Minnesota',11116,
-10,584,'S','Mess-up','Court',928293544,'Piteå','Minnesota',42360,
-11,12697,'S','Stigmatizations','Place',415924534,'Piteå','Minnesota',99239,
-12,67960,'W','Mess-up','Lane',417445895,'Piteå','Minnesota',20840,
-13,83081,'W','Pubescence','Avenue',842236985,'Piteå','Minnesota',94377,
-14,25504,'SE','Laggen','Ridge',659300397,'Dīnānagar','Minnesota',26785,
-15,44731,'NW','Mess-up','Vista',71055439,'Dīnānagar','Minnesota',36542,
-16,77244,'W','Microprocessors','Beach',541266839,'Dīnānagar','Minnesota',36978,
-17,80388,'S','Cashes','Court',916490692,'Piteå','Minnesota',98761,
-18,79620,'E','Pubescence','Commons',764518071,'Piteå','Minnesota',65528,
-19,97637,'W','Laggen','Avenue',237535805,'Dīnānagar','Minnesota',26373,
-20,83615,'W','Laggen','Estate',990526767,'Dīnānagar','Minnesota',49498,
-21,75473,'W','Despairs','Place',734394594,'Piteå','Minnesota',15411,
-22,10552,'E','Despairs','Ridge',868467582,'Piteå','Minnesota',75659,
-23,84006,'S','Epidotes','Road',173945585,'Piteå','Minnesota',97098,
-24,50509,'SW','Countershading','Estate',814256274,'Dīnānagar','Minnesota',99263,
-25,51181,'SE','Microprocessors','Place',599918381,'Dīnānagar','Minnesota',76545,
-26,55574,'NE','Pubescence','Road',576400869,'Dīnānagar','Minnesota',84500,
-27,74295,'NE','Mess-up','Gardens',711885458,'Piteå','Minnesota',18342,
-28,27945,'SW','Pubescence','Estate',740841863,'Piteå','Minnesota',67805,
-29,46101,'E','Countershading','Street',826060114,'Piteå','Minnesota',68497,
-30,34114,'E','Microprocessors','Gardens',10224719,'Piteå','Minnesota',24367,
-31,25512,'E','Stigmatizations','Estate',261287183,'Dīnānagar','Minnesota',91205,
-32,56547,'SE','Pubescence','Road',520683205,'Piteå','Minnesota',79060,
-33,36812,'S','Despairs','Place',285411866,'Piteå','Minnesota',48281,
-34,36428,'W','Mess-up','Place',663027612,'Dīnānagar','Minnesota',16414,
-35,31370,'NE','Pubescence','Lane',5806895,'Piteå','Minnesota',46474,
-36,94841,'N','Stigmatizations','Commons',985590905,'Piteå','Minnesota',10450,
-37,96052,'E','Limitations','Ridge',6590837,'Piteå','Minnesota',82693,
-38,50239,'W','Stigmatizations','Avenue',55720605,'Piteå','Minnesota',28206,
-39,86420,'N','Pubescence','Street',665388441,'Dīnānagar','Minnesota',47898,
-40,13056,'W','Countershading','Lane',285887351,'Dīnānagar','Minnesota',80605,
-41,5230,'NW','Countershading','Street',433920819,'Piteå','Minnesota',25725,
-42,68445,'NE','Despairs','Estate',32748007,'Dīnānagar','Minnesota',50476,
-43,76027,'S','Laggen','Gardens',195966036,'Piteå','Minnesota',53467,
-44,71549,'W','Laggen','Avenue',933489800,'Piteå','Minnesota',19837,
-45,83660,'NW','Despairs','Lane',194725879,'Piteå','Minnesota',35624,
-46,5104,'NW','Limitations','Ridge',568337784,'Piteå','Minnesota',57859,
-47,90389,'NW','Epidotes','Lane',427159751,'Dīnānagar','Minnesota',76128,
-48,41112,'NW','Epidotes','Beach',409056290,'Piteå','Minnesota',72403,
-49,30070,'SE','Pubescence','Estate',86404997,'Dīnānagar','Minnesota',44982,
-50,3810,'NE','Pubescence','Place',616884786,'Piteå','Minnesota',99293,
-51,37512,'SE','Epidotes','Avenue',204881758,'Dīnānagar','Minnesota',90439,
-52,59399,'W','Cashes','Estate',922844434,'Dīnānagar','Minnesota',23022,
-53,87949,'S','Pubescence','Avenue',753926948,'Piteå','Minnesota',73401,
-54,89509,'NW','Despairs','Commons',320766772,'Dīnānagar','Minnesota',99637,
-55,3123,'NW','Mess-up','Gardens',270310816,'Dīnānagar','Minnesota',40757,
-56,92639,'N','Countershading','Gardens',674879170,'Piteå','Minnesota',19139,
-57,19130,'NW','Epidotes','Lane',753681371,'Piteå','Minnesota',58904,
-58,48389,'NW','Despairs','Place',461824952,'Dīnānagar','Minnesota',12572,
-59,96423,'SE','Microprocessors','Vista',632587474,'Dīnānagar','Minnesota',92683,
-60,84552,'SW','Microprocessors','Ridge',466056786,'Dīnānagar','Minnesota',73262,
-61,744,'S','Countershading','Court',487783627,'Piteå','Minnesota',70591,
-62,97599,'W','Stigmatizations','Lane',307679235,'Piteå','Minnesota',18965,
-63,21077,'NE','Pubescence','Vista',910723113,'Dīnānagar','Minnesota',81646,
-64,39718,'N','Epidotes','Vista',631496002,'Dīnānagar','Minnesota',10753,
-65,16927,'NW','Laggen','Commons',572325016,'Piteå','Minnesota',31689,
-66,79450,'NW','Laggen','Ridge',158877472,'Dīnānagar','Minnesota',70358,
-67,13332,'N','Mess-up','Street',705369122,'Piteå','Minnesota',21634,
-68,2640,'N','Limitations','Gardens',124649165,'Piteå','Minnesota',52712,
-69,42672,'N','Limitations','Lane',906969252,'Piteå','Minnesota',10469,
-70,1541,'E','Countershading','Gardens',784134703,'Dīnānagar','Minnesota',81759,
-71,1803,'NE','Countershading','Road',701516196,'Dīnānagar','Minnesota',61670,
-72,76756,'NW','Pubescence','Gardens',871952823,'Dīnānagar','Minnesota',23857,
-73,1942,'NE','Cashes','Road',247838948,'Piteå','Minnesota',58075,
-74,96748,'NE','Countershading','Vista',915872796,'Piteå','Minnesota',64498,
-75,3617,'N','Stigmatizations','Lane',659756378,'Dīnānagar','Minnesota',51158,
-76,76031,'SW','Epidotes','Gardens',349161530,'Piteå','Minnesota',34603,
-77,44123,'SW','Laggen','Beach',298770462,'Piteå','Minnesota',40110,
-78,88096,'W','Laggen','Road',251161950,'Piteå','Minnesota',86538,
-79,540,'NE','Laggen','Lane',566366482,'Dīnānagar','Minnesota',10024,
-80,2618,'N','Epidotes','Place',982967312,'Dīnānagar','Minnesota',51990,
-81,83688,'N','Despairs','Avenue',764242463,'Piteå','Minnesota',24084,
-82,90434,'S','Countershading','Street',383951910,'Piteå','Minnesota',62739,
-83,67882,'W','Despairs','Gardens',737903487,'Dīnānagar','Minnesota',87642,
-84,72107,'S','Countershading','Commons',207285030,'Dīnānagar','Minnesota',35330,
-85,18733,'W','Mess-up','Avenue',681568326,'Dīnānagar','Minnesota',66700,
-86,529,'E','Mess-up','Gardens',220975036,'Piteå','Minnesota',17977,
-87,16460,'NE','Cashes','Commons',896840171,'Piteå','Minnesota',60388,
-88,85198,'S','Cashes','Road',965782349,'Dīnānagar','Minnesota',61954,
-89,41146,'E','Microprocessors','Street',856826576,'Dīnānagar','Minnesota',64126,
-90,31457,'SW','Cashes','Estate',872017074,'Piteå','Minnesota',94480,
-91,48038,'NW','Countershading','Gardens',812693645,'Piteå','Minnesota',20303,
-92,29693,'NE','Cashes','Vista',486198639,'Piteå','Minnesota',66306,
-93,32127,'SE','Mess-up','Estate',442433345,'Piteå','Minnesota',65426,
-94,61660,'SE','Pubescence','Vista',437715368,'Dīnānagar','Minnesota',38818,
-95,70108,'NW','Pubescence','Road',489407534,'Piteå','Minnesota',62092,
-96,13570,'S','Epidotes','Gardens',229227016,'Dīnānagar','Minnesota',54331,
-97,18871,'NE','Mess-up','Place',638856170,'Piteå','Minnesota',55551,
-98,99681,'N','Countershading','Lane',17808795,'Dīnānagar','Minnesota',88389,
-99,87133,'N','Countershading','Court',59066051,'Dīnānagar','Minnesota',19278,
-100,95483,'NW','Laggen','Lane',721254172,'Piteå','Minnesota',65802,
+id,number,direction,streetName,suffix,unit,city,state,postalCode
+1,81184,'W','Noreen','Road',143862067,'Ixtapaluca','Rhode island',55750
+2,89975,'NE','Dumbbells','Ridge',701876023,'Pasadena','Rhode island',99796
+3,58445,'SW','Heliports','Avenue',186117898,'Ixtapaluca','Rhode island',20648
+4,60316,'W','Ministrant','Place',909338540,'Pasadena','Rhode island',33540
+5,25363,'SE','Nitrifications','Vista',571079541,'Pasadena','Rhode island',32799
+6,15742,'W','Love','Court',111176881,'Ixtapaluca','Rhode island',28238
+7,22262,'N','Kirns','Avenue',424504395,'Ixtapaluca','Rhode island',46832
+8,80301,'SE','Self-consequence','Vista',195346510,'Pasadena','Rhode island',79019
+9,60816,'SW','Droop','Place',497172510,'Ixtapaluca','Rhode island',73753
+10,4516,'NE','Succession','Vista',633580678,'Pasadena','Rhode island',65086
+11,66639,'NW','Noreen','Estate',747778876,'Pasadena','Rhode island',89761
+12,20183,'NW','Noreen','Avenue',624838953,'Ixtapaluca','Rhode island',75381
+13,98508,'E','Kirns','Road',510815305,'Ixtapaluca','Rhode island',99661
+14,18094,'SW','Droop','Ridge',760410300,'Pasadena','Rhode island',33421
+15,10530,'W','Self-consequence','Place',868374405,'Ixtapaluca','Rhode island',88646
+16,23916,'W','Love','Gardens',618415717,'Pasadena','Rhode island',14800
+17,37606,'E','Nitrifications','Vista',396644751,'Ixtapaluca','Rhode island',48658
+18,1135,'W','Dumbbells','Road',677905101,'Pasadena','Rhode island',90670
+19,61383,'NE','Self-consequence','Road',749044804,'Pasadena','Rhode island',59093
+20,35480,'E','Heliports','Ridge',646018065,'Pasadena','Rhode island',40873
+21,89798,'S','Kirns','Gardens',440969337,'Ixtapaluca','Rhode island',75563
+22,90738,'NE','Self-consequence','Place',113410620,'Ixtapaluca','Rhode island',23300
+23,67271,'NE','Self-consequence','Gardens',226026369,'Pasadena','Rhode island',87971
+24,60621,'NE','Ministrant','Estate',963118513,'Ixtapaluca','Rhode island',38683
+25,66148,'NW','Nitrifications','Ridge',380419242,'Ixtapaluca','Rhode island',33059
+26,80227,'S','Kirns','Avenue',754946394,'Ixtapaluca','Rhode island',51115
+27,48840,'NE','Nitrifications','Lane',526047538,'Ixtapaluca','Rhode island',16243
+28,98218,'SE','Self-consequence','Estate',93285692,'Ixtapaluca','Rhode island',21965
+29,74310,'NE','Love','Gardens',246333481,'Pasadena','Rhode island',41545
+30,86827,'NW','Kirns','Lane',416664803,'Ixtapaluca','Rhode island',23809
+31,45278,'W','Kirns','Estate',266323862,'Pasadena','Rhode island',39061
+32,14280,'E','Droop','Court',62186836,'Pasadena','Rhode island',31124
+33,17919,'S','Dumbbells','Avenue',979137271,'Ixtapaluca','Rhode island',43815
+34,4953,'NE','Kirns','Court',646806470,'Pasadena','Rhode island',10358
+35,5500,'SW','Self-consequence','Ridge',431357863,'Pasadena','Rhode island',82319
+36,14522,'S','Kirns','Gardens',35176166,'Ixtapaluca','Rhode island',21993
+37,32656,'SE','Self-consequence','Vista',819474386,'Ixtapaluca','Rhode island',42764
+38,44708,'NW','Nitrifications','Ridge',425839460,'Pasadena','Rhode island',23030
+39,66596,'S','Love','Commons',515034099,'Pasadena','Rhode island',61774
+40,4975,'SE','Dumbbells','Avenue',241138778,'Pasadena','Rhode island',48370
+41,5610,'NW','Kirns','Court',444768855,'Ixtapaluca','Rhode island',64071
+42,1568,'W','Droop','Gardens',961749774,'Pasadena','Rhode island',87186
+43,73988,'W','Love','Vista',330543436,'Ixtapaluca','Rhode island',84888
+44,19054,'E','Self-consequence','Road',34013785,'Ixtapaluca','Rhode island',55490
+45,24250,'S','Dumbbells','Vista',468202596,'Pasadena','Rhode island',30055
+46,86693,'NW','Dumbbells','Road',940648456,'Ixtapaluca','Rhode island',74397
+47,78172,'S','Succession','Court',415496200,'Pasadena','Rhode island',19660
+48,54637,'SW','Kirns','Lane',109500947,'Pasadena','Rhode island',36053
+49,11386,'E','Droop','Lane',400299438,'Pasadena','Rhode island',83474
+50,73973,'SW','Droop','Avenue',877292464,'Ixtapaluca','Rhode island',93060
+51,93483,'E','Kirns','Road',246248898,'Ixtapaluca','Rhode island',76696
+52,25008,'NW','Kirns','Estate',616682818,'Ixtapaluca','Rhode island',20479
+53,19794,'E','Self-consequence','Vista',97501131,'Pasadena','Rhode island',93943
+54,37033,'NE','Kirns','Commons',558311101,'Ixtapaluca','Rhode island',22275
+55,14499,'NE','Succession','Commons',305313208,'Pasadena','Rhode island',27762
+56,19457,'NW','Droop','Street',51016635,'Ixtapaluca','Rhode island',54374
+57,86521,'SW','Noreen','Street',614239663,'Pasadena','Rhode island',59011
+58,17981,'N','Noreen','Lane',623405715,'Pasadena','Rhode island',64904
+59,95450,'NE','Heliports','Vista',335806627,'Ixtapaluca','Rhode island',17296
+60,96946,'W','Kirns','Beach',493725399,'Ixtapaluca','Rhode island',56236
+61,35499,'NW','Ministrant','Beach',550916982,'Ixtapaluca','Rhode island',74168
+62,33949,'W','Love','Road',821453869,'Ixtapaluca','Rhode island',27848
+63,98764,'NE','Nitrifications','Commons',344088322,'Pasadena','Rhode island',56468
+64,95667,'NW','Heliports','Beach',764664527,'Ixtapaluca','Rhode island',86090
+65,30460,'NE','Kirns','Vista',285897974,'Ixtapaluca','Rhode island',66017
+66,90911,'NE','Kirns','Ridge',913449993,'Ixtapaluca','Rhode island',47538
+67,31459,'SE','Ministrant','Avenue',647073483,'Pasadena','Rhode island',47014
+68,73226,'SE','Nitrifications','Avenue',478239825,'Pasadena','Rhode island',88912
+69,8802,'S','Kirns','Gardens',53034986,'Ixtapaluca','Rhode island',72783
+70,57685,'W','Kirns','Court',432239370,'Ixtapaluca','Rhode island',52918
+71,58826,'NE','Droop','Lane',806423269,'Pasadena','Rhode island',29676
+72,17373,'N','Love','Gardens',758889311,'Pasadena','Rhode island',55892
+73,2558,'E','Dumbbells','Commons',106094482,'Ixtapaluca','Rhode island',42799
+74,26557,'W','Kirns','Estate',268826554,'Pasadena','Rhode island',88587
+75,50287,'NE','Love','Commons',765223865,'Ixtapaluca','Rhode island',56563
+76,4773,'S','Noreen','Ridge',318460421,'Ixtapaluca','Rhode island',88008
+77,32488,'W','Heliports','Court',742290000,'Ixtapaluca','Rhode island',36837
+78,96150,'SE','Noreen','Ridge',950917771,'Pasadena','Rhode island',14229
+79,32360,'NE','Droop','Gardens',455700932,'Pasadena','Rhode island',66163
+80,96997,'NW','Dumbbells','Place',282453105,'Ixtapaluca','Rhode island',73115
+81,91083,'N','Heliports','Court',351894785,'Pasadena','Rhode island',96076
+82,53120,'W','Heliports','Gardens',129908687,'Ixtapaluca','Rhode island',93906
+83,95886,'S','Heliports','Gardens',609660769,'Ixtapaluca','Rhode island',88691
+84,24996,'SE','Kirns','Ridge',953083953,'Pasadena','Rhode island',64680
+85,82138,'S','Nitrifications','Court',683792179,'Pasadena','Rhode island',76236
+86,47058,'E','Love','Avenue',901254395,'Ixtapaluca','Rhode island',89644
+87,87016,'SE','Heliports','Beach',267395349,'Ixtapaluca','Rhode island',21986
+88,51793,'S','Nitrifications','Beach',471956131,'Pasadena','Rhode island',14798
+89,62085,'N','Ministrant','Commons',579427231,'Ixtapaluca','Rhode island',30505
+90,46349,'NE','Self-consequence','Commons',408782507,'Ixtapaluca','Rhode island',17220
+91,12927,'N','Heliports','Street',39324349,'Pasadena','Rhode island',75754
+92,22524,'NW','Nitrifications','Commons',838949854,'Ixtapaluca','Rhode island',95211
+93,29018,'E','Self-consequence','Commons',24792642,'Pasadena','Rhode island',46116
+94,82671,'NE','Self-consequence','Ridge',680467742,'Ixtapaluca','Rhode island',71066
+95,19180,'SE','Love','Lane',202555611,'Pasadena','Rhode island',31486
+96,22345,'W','Kirns','Place',879444015,'Ixtapaluca','Rhode island',79645
+97,53974,'S','Heliports','Ridge',830960661,'Pasadena','Rhode island',76026
+98,78492,'E','Heliports','Road',136519585,'Pasadena','Rhode island',37447
+99,37094,'NW','Heliports','Ridge',83393817,'Ixtapaluca','Rhode island',62836
+100,7458,'S','Nitrifications','Vista',459161857,'Pasadena','Rhode island',53370
