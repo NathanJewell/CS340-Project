@@ -1,6 +1,6 @@
 tablereference:
   keys:
-    - oid:
+    - person_id:
         entity: person
-    - hid:
+    - house_id:
         entity: house
