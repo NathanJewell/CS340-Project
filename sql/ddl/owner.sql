@@ -9,6 +9,6 @@ CREATE TABLE owner(
 		ON DELETE CASCADE,
 	CONSTRAINT `house_id_fk`
 		FOREIGN KEY (house_id) REFERENCES house (id)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT `pk_owner` PRIMARY KEY (person_id, house_id)
 ) ENGINE = InnoDB;
