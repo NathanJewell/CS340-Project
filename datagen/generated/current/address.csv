@@ -1,101 +1,101 @@
 id,number,direction,streetName,suffix,unit,city,state,postalCode
-1,27257,'SE','Monomials','Estate',263001741,'Lidzbark warmiński','Alaska',26549
-2,51608,'SE','Cation','Commons',901687355,'Brentwood','Alaska',93748
-3,49566,'NE','Schuyt','Street',137451541,'Lidzbark warmiński','Alaska',23238
-4,66386,'NE','Bonehead','Street',345327292,'Lidzbark warmiński','Alaska',63863
-5,31993,'NE','Subprefecture','Street',805899389,'Lidzbark warmiński','Alaska',30928
-6,81198,'NW','Hopis','Street',630427306,'Brentwood','Alaska',46183
-7,94876,'S','Marathonian','Street',648834262,'Lidzbark warmiński','Alaska',97614
-8,38419,'SE','Blunder','Street',534723970,'Brentwood','Alaska',33294
-9,37401,'SE','Nightstand','Court',732785689,'Lidzbark warmiński','Alaska',85231
-10,30722,'E','Booby','Avenue',586759027,'Lidzbark warmiński','Alaska',83353
-11,14849,'SE','Nightstand','Place',750668055,'Brentwood','Alaska',21370
-12,81518,'SE','Bonehead','Beach',708666506,'Brentwood','Alaska',10164
-13,11448,'NW','Blunder','Lane',179856937,'Lidzbark warmiński','Alaska',44927
-14,86095,'SE','Schuyt','Street',749587045,'Brentwood','Alaska',93572
-15,38736,'E','Schuyt','Commons',362365743,'Brentwood','Alaska',45265
-16,36615,'SE','Hopis','Vista',956917126,'Lidzbark warmiński','Alaska',59845
-17,79366,'SW','Schuyt','Court',166185629,'Brentwood','Alaska',56036
-18,84902,'SE','Blunder','Lane',249137672,'Lidzbark warmiński','Alaska',80981
-19,76119,'NW','Monomials','Place',120319028,'Lidzbark warmiński','Alaska',84840
-20,76418,'SE','Hopis','Court',416751860,'Lidzbark warmiński','Alaska',81167
-21,15626,'NE','Hopis','Avenue',134828461,'Lidzbark warmiński','Alaska',25598
-22,12270,'N','Monomials','Street',247431073,'Brentwood','Alaska',73231
-23,79840,'S','Blunder','Beach',76564271,'Lidzbark warmiński','Alaska',82872
-24,70407,'S','Subprefecture','Vista',373041898,'Lidzbark warmiński','Alaska',93881
-25,20889,'N','Cation','Vista',7280816,'Lidzbark warmiński','Alaska',25708
-26,26384,'SW','Subprefecture','Gardens',901187353,'Lidzbark warmiński','Alaska',51880
-27,80307,'E','Cation','Place',680702010,'Brentwood','Alaska',33563
-28,63816,'N','Cation','Street',359380763,'Lidzbark warmiński','Alaska',50568
-29,66237,'N','Booby','Court',375068035,'Brentwood','Alaska',78942
-30,64990,'NW','Cation','Road',700833687,'Lidzbark warmiński','Alaska',89125
-31,29760,'N','Schuyt','Road',150363276,'Lidzbark warmiński','Alaska',92023
-32,31137,'S','Subprefecture','Road',363970860,'Lidzbark warmiński','Alaska',42050
-33,5751,'W','Schuyt','Place',514782526,'Brentwood','Alaska',17284
-34,4532,'NE','Blunder','Vista',601596682,'Lidzbark warmiński','Alaska',40310
-35,46944,'W','Blunder','Beach',412125393,'Lidzbark warmiński','Alaska',96787
-36,8855,'E','Hopis','Vista',434019351,'Lidzbark warmiński','Alaska',13152
-37,37538,'E','Nightstand','Road',78006768,'Brentwood','Alaska',21991
-38,19965,'E','Nightstand','Vista',6946384,'Brentwood','Alaska',62849
-39,88707,'N','Nightstand','Ridge',575532870,'Brentwood','Alaska',59518
-40,8691,'SE','Nightstand','Beach',394698794,'Brentwood','Alaska',20272
-41,57316,'E','Monomials','Street',1239255,'Brentwood','Alaska',49300
-42,21009,'W','Subprefecture','Commons',925581588,'Lidzbark warmiński','Alaska',50668
-43,96788,'W','Marathonian','Street',51291678,'Lidzbark warmiński','Alaska',81752
-44,62160,'SE','Hopis','Lane',378507528,'Lidzbark warmiński','Alaska',72098
-45,75175,'S','Blunder','Court',824707173,'Brentwood','Alaska',50324
-46,30706,'S','Subprefecture','Vista',657805609,'Brentwood','Alaska',67561
-47,70343,'S','Bonehead','Estate',811134722,'Brentwood','Alaska',10329
-48,84305,'S','Blunder','Ridge',79515793,'Lidzbark warmiński','Alaska',30987
-49,5769,'SE','Cation','Ridge',407653506,'Lidzbark warmiński','Alaska',40651
-50,57713,'W','Schuyt','Avenue',257487075,'Lidzbark warmiński','Alaska',51388
-51,57409,'NW','Booby','Lane',584950801,'Brentwood','Alaska',65096
-52,49349,'N','Monomials','Avenue',327882756,'Brentwood','Alaska',64333
-53,30528,'E','Hopis','Vista',207810289,'Lidzbark warmiński','Alaska',66185
-54,13775,'SW','Subprefecture','Lane',520059954,'Lidzbark warmiński','Alaska',71125
-55,75151,'NE','Monomials','Road',528488828,'Lidzbark warmiński','Alaska',38846
-56,50386,'E','Booby','Court',300914595,'Brentwood','Alaska',69344
-57,65949,'N','Bonehead','Place',803698101,'Brentwood','Alaska',69398
-58,87010,'SE','Blunder','Ridge',815760337,'Lidzbark warmiński','Alaska',36283
-59,19754,'NE','Hopis','Court',91878653,'Lidzbark warmiński','Alaska',27981
-60,36864,'E','Blunder','Commons',959702279,'Lidzbark warmiński','Alaska',46135
-61,58711,'NW','Blunder','Place',897303960,'Lidzbark warmiński','Alaska',18563
-62,40734,'SW','Cation','Avenue',173789970,'Brentwood','Alaska',78275
-63,13391,'NW','Booby','Avenue',322113134,'Lidzbark warmiński','Alaska',99617
-64,48169,'E','Booby','Gardens',437189926,'Lidzbark warmiński','Alaska',34201
-65,41413,'N','Nightstand','Road',44845223,'Brentwood','Alaska',97968
-66,10394,'S','Nightstand','Beach',123693081,'Lidzbark warmiński','Alaska',89605
-67,23064,'S','Subprefecture','Avenue',391576684,'Brentwood','Alaska',52721
-68,59596,'E','Hopis','Vista',742967817,'Lidzbark warmiński','Alaska',83885
-69,84327,'SW','Cation','Beach',441671605,'Brentwood','Alaska',36416
-70,75879,'N','Booby','Place',726854633,'Lidzbark warmiński','Alaska',89755
-71,81570,'W','Booby','Court',742381204,'Lidzbark warmiński','Alaska',81970
-72,82986,'SW','Schuyt','Court',915863843,'Brentwood','Alaska',10870
-73,59195,'E','Blunder','Road',863527385,'Brentwood','Alaska',39585
-74,51300,'SW','Schuyt','Vista',599578544,'Brentwood','Alaska',90739
-75,86052,'NW','Marathonian','Lane',813269460,'Brentwood','Alaska',37544
-76,316,'E','Booby','Road',595336834,'Lidzbark warmiński','Alaska',82361
-77,4294,'S','Cation','Avenue',843009240,'Lidzbark warmiński','Alaska',10883
-78,55829,'E','Booby','Commons',606111419,'Brentwood','Alaska',64805
-79,76865,'SE','Monomials','Beach',597276161,'Brentwood','Alaska',45730
-80,71957,'SW','Bonehead','Avenue',261765000,'Brentwood','Alaska',92444
-81,2969,'SE','Bonehead','Street',644756434,'Brentwood','Alaska',89209
-82,76611,'S','Monomials','Lane',551937346,'Lidzbark warmiński','Alaska',38276
-83,4740,'NW','Booby','Ridge',297745741,'Brentwood','Alaska',62150
-84,41246,'SE','Bonehead','Lane',854961459,'Brentwood','Alaska',75527
-85,40240,'N','Booby','Beach',859813465,'Lidzbark warmiński','Alaska',86425
-86,73367,'N','Blunder','Court',920063769,'Lidzbark warmiński','Alaska',49207
-87,36510,'S','Schuyt','Commons',26398012,'Brentwood','Alaska',60565
-88,5657,'NE','Hopis','Ridge',442799236,'Lidzbark warmiński','Alaska',23022
-89,80915,'NE','Nightstand','Ridge',720553862,'Lidzbark warmiński','Alaska',42467
-90,64106,'N','Booby','Ridge',887109099,'Brentwood','Alaska',50824
-91,42952,'E','Nightstand','Beach',890523926,'Brentwood','Alaska',50529
-92,15324,'SE','Marathonian','Road',234708887,'Lidzbark warmiński','Alaska',80774
-93,54354,'NW','Nightstand','Estate',193801915,'Brentwood','Alaska',79040
-94,69029,'SE','Bonehead','Road',591011330,'Lidzbark warmiński','Alaska',92426
-95,71059,'NW','Subprefecture','Place',613709803,'Lidzbark warmiński','Alaska',11944
-96,69382,'E','Blunder','Vista',843286442,'Lidzbark warmiński','Alaska',59561
-97,56659,'SW','Marathonian','Ridge',757801609,'Lidzbark warmiński','Alaska',81067
-98,69989,'S','Blunder','Street',841671416,'Lidzbark warmiński','Alaska',21916
-99,67035,'NW','Monomials','Vista',202163883,'Lidzbark warmiński','Alaska',47588
-100,81957,'E','Subprefecture','Road',674608732,'Lidzbark warmiński','Alaska',35838
+1,56540,'SW','Psychopathology','Street',574345738,'Potosí','Virginia',96117
+2,32438,'NE','Stearates','Avenue',588807807,'Campo verde','Virginia',23752
+3,20258,'S','Hobos','Beach',295406089,'Potosí','Virginia',59711
+4,2651,'SW','Tamarix','Lane',670883196,'Potosí','Virginia',47524
+5,40606,'SE','Marchantias','Street',443502930,'Campo verde','Virginia',21286
+6,52072,'SW','Jebels','Street',519789607,'Potosí','Virginia',36987
+7,71311,'S','Barnstormer','Vista',679404955,'Potosí','Virginia',26281
+8,43450,'W','Succursal','Avenue',563257060,'Campo verde','Virginia',51935
+9,77011,'N','Gnaws','Lane',942612276,'Potosí','Virginia',93328
+10,26304,'S','Jacobuses','Ridge',122029414,'Potosí','Virginia',72971
+11,14496,'SE','Gnaws','Street',206374174,'Potosí','Virginia',56570
+12,4855,'SW','Tamarix','Gardens',42219806,'Campo verde','Virginia',66551
+13,7876,'E','Barnstormer','Road',918169232,'Campo verde','Virginia',16057
+14,91837,'SW','Barnstormer','Vista',739436416,'Campo verde','Virginia',62560
+15,27857,'SE','Tamarix','Estate',804076267,'Campo verde','Virginia',94880
+16,7362,'SW','Jebels','Gardens',331798501,'Campo verde','Virginia',43045
+17,6757,'E','Psychopathology','Beach',172077577,'Potosí','Virginia',71489
+18,78466,'NE','Psychopathology','Beach',221924407,'Campo verde','Virginia',32972
+19,33254,'SW','Succursal','Road',229578208,'Potosí','Virginia',63164
+20,85763,'NW','Jacobuses','Street',444413606,'Potosí','Virginia',29076
+21,72587,'W','Gnaws','Street',153418496,'Campo verde','Virginia',83384
+22,21581,'E','Marchantias','Ridge',957804685,'Potosí','Virginia',59074
+23,89294,'W','Gnaws','Estate',691905700,'Campo verde','Virginia',33603
+24,79021,'N','Stearates','Street',193005853,'Potosí','Virginia',19563
+25,20390,'N','Tamarix','Avenue',269339643,'Potosí','Virginia',40608
+26,43257,'E','Stearates','Street',986912008,'Potosí','Virginia',60478
+27,7632,'E','Barnstormer','Street',950666678,'Campo verde','Virginia',57289
+28,78017,'NE','Hobos','Beach',68894220,'Potosí','Virginia',81732
+29,86795,'S','Succursal','Place',388479807,'Potosí','Virginia',13544
+30,44659,'SW','Tamarix','Gardens',658096875,'Potosí','Virginia',49760
+31,5172,'SE','Stearates','Avenue',355703049,'Campo verde','Virginia',85600
+32,13961,'SE','Succursal','Court',591225004,'Campo verde','Virginia',37924
+33,75420,'W','Psychopathology','Ridge',710814583,'Potosí','Virginia',52464
+34,71610,'NE','Gnaws','Vista',244938230,'Campo verde','Virginia',88978
+35,35541,'NE','Jacobuses','Street',177506451,'Potosí','Virginia',91157
+36,19787,'NE','Stearates','Estate',701269183,'Potosí','Virginia',66636
+37,25633,'S','Jebels','Avenue',279672208,'Campo verde','Virginia',28960
+38,93072,'SW','Tamarix','Place',185469508,'Campo verde','Virginia',54172
+39,26613,'SW','Stearates','Ridge',106654291,'Potosí','Virginia',61478
+40,60735,'W','Stearates','Vista',990702092,'Potosí','Virginia',23455
+41,92952,'E','Succursal','Court',218377064,'Campo verde','Virginia',42482
+42,68541,'SW','Stearates','Court',828858995,'Potosí','Virginia',39746
+43,37719,'E','Stearates','Ridge',246026436,'Potosí','Virginia',97490
+44,41323,'S','Stearates','Beach',827007582,'Potosí','Virginia',84422
+45,77148,'NE','Succursal','Court',310284200,'Campo verde','Virginia',35218
+46,17563,'E','Tamarix','Vista',725442750,'Potosí','Virginia',18550
+47,30923,'NE','Tamarix','Street',321402568,'Potosí','Virginia',28326
+48,95597,'E','Hobos','Street',856185300,'Campo verde','Virginia',32431
+49,96144,'S','Barnstormer','Vista',239232035,'Potosí','Virginia',62461
+50,33562,'NE','Barnstormer','Avenue',663501302,'Potosí','Virginia',96291
+51,5569,'SW','Jacobuses','Lane',108809337,'Campo verde','Virginia',90682
+52,89796,'N','Barnstormer','Ridge',744069955,'Potosí','Virginia',37795
+53,3247,'S','Marchantias','Avenue',237550725,'Campo verde','Virginia',16435
+54,27772,'NE','Gnaws','Road',627902371,'Potosí','Virginia',19493
+55,39182,'NW','Jebels','Commons',220836915,'Campo verde','Virginia',59244
+56,89630,'SE','Psychopathology','Avenue',778346265,'Campo verde','Virginia',46569
+57,75944,'W','Gnaws','Place',319645349,'Potosí','Virginia',25195
+58,5528,'NE','Psychopathology','Ridge',298753008,'Potosí','Virginia',25285
+59,12845,'W','Psychopathology','Road',851567812,'Campo verde','Virginia',88395
+60,23719,'SE','Psychopathology','Lane',545417932,'Potosí','Virginia',38795
+61,43157,'SE','Tamarix','Road',499405112,'Campo verde','Virginia',51714
+62,3110,'S','Barnstormer','Avenue',814874416,'Campo verde','Virginia',15326
+63,863,'NE','Marchantias','Commons',24148568,'Potosí','Virginia',80100
+64,59470,'N','Jacobuses','Beach',155436812,'Campo verde','Virginia',44978
+65,75567,'E','Hobos','Estate',529210813,'Campo verde','Virginia',97521
+66,25432,'SE','Psychopathology','Lane',928536328,'Potosí','Virginia',17339
+67,77480,'W','Stearates','Ridge',108395513,'Campo verde','Virginia',61771
+68,20011,'NW','Psychopathology','Gardens',528827678,'Potosí','Virginia',24024
+69,17980,'NE','Psychopathology','Vista',620419987,'Campo verde','Virginia',93319
+70,62476,'N','Jebels','Lane',534053314,'Potosí','Virginia',14692
+71,15814,'NE','Tamarix','Beach',14916733,'Potosí','Virginia',83172
+72,61199,'NW','Gnaws','Gardens',900370887,'Potosí','Virginia',58478
+73,1757,'N','Jebels','Lane',530367513,'Campo verde','Virginia',99371
+74,74137,'NW','Marchantias','Vista',381785669,'Campo verde','Virginia',21985
+75,31825,'NE','Hobos','Estate',172513260,'Campo verde','Virginia',21046
+76,57564,'W','Jacobuses','Estate',138238402,'Potosí','Virginia',34137
+77,40001,'NW','Stearates','Court',917475714,'Campo verde','Virginia',10658
+78,86065,'NE','Marchantias','Estate',227543217,'Potosí','Virginia',90446
+79,98899,'SW','Jacobuses','Lane',933944051,'Campo verde','Virginia',12296
+80,3233,'SW','Stearates','Lane',75252598,'Campo verde','Virginia',76541
+81,57980,'NE','Gnaws','Gardens',439539947,'Potosí','Virginia',23662
+82,24120,'W','Hobos','Place',253901027,'Campo verde','Virginia',43269
+83,30640,'N','Psychopathology','Vista',991947458,'Campo verde','Virginia',82745
+84,54632,'NE','Jacobuses','Estate',350064414,'Campo verde','Virginia',29901
+85,83493,'NE','Stearates','Estate',109784202,'Campo verde','Virginia',87145
+86,99421,'SE','Hobos','Court',569696976,'Campo verde','Virginia',92124
+87,65175,'W','Hobos','Estate',874288876,'Potosí','Virginia',61905
+88,38042,'NE','Barnstormer','Place',842856817,'Potosí','Virginia',57955
+89,96426,'S','Stearates','Avenue',597462120,'Potosí','Virginia',63600
+90,96242,'E','Jebels','Avenue',672784678,'Potosí','Virginia',35807
+91,94274,'E','Gnaws','Commons',715064448,'Campo verde','Virginia',87275
+92,67757,'NE','Gnaws','Court',131494564,'Campo verde','Virginia',79650
+93,71682,'SW','Marchantias','Commons',694012930,'Potosí','Virginia',41709
+94,63561,'W','Stearates','Road',840963873,'Potosí','Virginia',45176
+95,39621,'W','Stearates','Estate',370912098,'Campo verde','Virginia',79209
+96,26799,'S','Jebels','Court',641544194,'Potosí','Virginia',37107
+97,34100,'S','Jacobuses','Gardens',835855241,'Campo verde','Virginia',40212
+98,31059,'E','Marchantias','Court',855683296,'Potosí','Virginia',37432
+99,62934,'E','Stearates','Commons',628242857,'Campo verde','Virginia',77390
+100,68130,'SE','Hobos','Road',612643367,'Campo verde','Virginia',10643

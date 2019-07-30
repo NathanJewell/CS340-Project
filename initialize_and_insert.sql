@@ -1,0 +1,12 @@
+source sql/ddl/job.sql
+source datagen/generated/current/job.sql
+source sql/ddl/address.sql
+source datagen/generated/current/address.sql
+source sql/ddl/house.sql
+source datagen/generated/current/house.sql
+source sql/ddl/person.sql
+source datagen/generated/current/person.sql
+source sql/ddl/neighbor.sql
+source datagen/generated/current/neighbor.sql
+source sql/ddl/owner.sql
+source datagen/generated/current/owner.sql

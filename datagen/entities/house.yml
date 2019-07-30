@@ -64,7 +64,7 @@ attributes:
       distribution:
         random: True
         unique: False
-  - address:
+  - address_id:
       type:
         class: "reference"
         entity: address
