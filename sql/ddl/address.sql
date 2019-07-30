@@ -12,7 +12,4 @@ CREATE TABLE address (
     state VARCHAR(127) NOT NULL,
     postalCode INT UNSIGNED NOT NULL,
     house INT UNSIGNED DEFAULT NULL,
-    CONSTRAINT `house_fk`
-        FOREIGN KEY (house) REFERENCES house (id)
-        ON DELETE SET NULL
 ) ENGINE = innodb
