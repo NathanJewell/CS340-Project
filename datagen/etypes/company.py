@@ -10,7 +10,7 @@ class Company:
             self.occs = occFile.readlines()
     
     def next(self):
-        return "'{}'".format("{}\'s {} {}s".format(
+        return "'{}'".format("{}\\'s {} {}s".format(
             random.choice(self.names).strip(),
             random.choice(self.adj).strip().capitalize(),
             random.choice(self.occs).strip()
