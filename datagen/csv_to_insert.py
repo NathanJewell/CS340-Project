@@ -5,7 +5,7 @@ loadFrom = "./generated/current/"
 
 dataFiles = glob.glob(loadFrom + "*.csv")
 
-statement = "INSERT INTO {} ({}) VALUES {}"
+statement = "INSERT INTO {} ({}) VALUES {};"
 for f in dataFiles:
     table = f.split("/")[-1].split(".")[0]
     with open(f, "r") as dataFile:
