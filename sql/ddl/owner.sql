@@ -2,8 +2,8 @@
 DROP TABLE IF EXISTS owner;
 
 CREATE TABLE owner(
-	person_id INT NOT NULL,
-	house_id INT NOT NULL,
+	person_id INT UNSIGNED NOT NULL,
+	house_id INT UNSIGNED NOT NULL,
 	CONSTRAINT `person_id_fk`
 		FOREIGN KEY (person_id) REFERENCES person (id)
 		ON DELETE CASCADE,

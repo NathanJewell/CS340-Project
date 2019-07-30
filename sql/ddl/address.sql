@@ -11,5 +11,5 @@ CREATE TABLE address (
     city VARCHAR(127) NOT NULL,
     state VARCHAR(127) NOT NULL,
     postalCode INT UNSIGNED NOT NULL,
-    house INT UNSIGNED DEFAULT NULL,
+    house INT UNSIGNED DEFAULT NULL
 ) ENGINE = innodb

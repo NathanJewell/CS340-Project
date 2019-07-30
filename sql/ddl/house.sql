@@ -11,7 +11,7 @@ CREATE TABLE house(
 	sqft INT UNSIGNED NOT NULL,
 	levels INT UNSIGNED NOT NULL,
 	house_value INT UNSIGNED NOT NULL, -- value is an sql keyword so changed to house_value
-	address_id INT DEFAULT NULL,
+	address_id INT UNSIGNED DEFAULT NULL,
 	CONSTRAINT `address_id_fk`
 		FOREIGN KEY (address_id) REFERENCES address (id)
 		ON DELETE SET NULL

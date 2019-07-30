@@ -2,8 +2,8 @@
 DROP TABLE IF EXISTS neighbor;
 
 CREATE TABLE neighbor(
-	pida INT NOT NULL,
-	pidb INT NOT NULL,
+	pida INT UNSIGNED NOT NULL,
+	pidb INT UNSIGNED NOT NULL,
 	CONSTRAINT `person_1_id_fk`
 		FOREIGN KEY (pida) REFERENCES person(id)
 		ON DELETE CASCADE,
