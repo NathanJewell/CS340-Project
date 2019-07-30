@@ -56,7 +56,7 @@ attributes:
       distribution:
         random: True
         unique: False
-  - value:
+  - house_value:
       type:
         class: "number"
         min: 10000
