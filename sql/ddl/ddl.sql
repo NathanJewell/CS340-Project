@@ -1,4 +1,22 @@
 -- Molly
+
+CREATE TABLE house(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	style VARCHAR(255) NOT NULL,
+	constructed YEAR(4) NOT NULL,
+	purchased YEAR(4) NOT NULL,
+	bedrooms INT UNSIGNED NOT NULL,
+	bathrooms INT UNSIGNED NOT NULL,
+	sqft INT UNSIGNED NOT NULL,
+	levels INT UNSIGNED NOT NULL,
+	house_value INT UNSIGNED NOT NULL, -- value is an sql keyword so changed to house_value
+	address_id INT UNSIGNED DEFAULT NULL,
+	CONSTRAINT `address_id_fk`
+		FOREIGN KEY (address_id) REFERENCES address (id)
+		ON DELETE SET NULL
+) ENGINE=InnoDB;-- Molly
+DROP TABLE IF EXISTS owner;
+
 CREATE TABLE owner(
 	person_id INT UNSIGNED NOT NULL,
 	house_id INT UNSIGNED NOT NULL,
@@ -22,7 +40,8 @@ CREATE TABLE neighbor(
 		FOREIGN KEY (pidb) REFERENCES person(id)
 		ON DELETE CASCADE,
 	CONSTRAINT `pk_neighbor` PRIMARY KEY (pida, pidb)
-) ENGINE = InnoDB;source job.sql
+) ENGINE = InnoDB;--Nathan
+--OG SPEC is mariadb
 
 CREATE TABLE person (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -37,25 +56,7 @@ CREATE TABLE person (
         FOREIGN KEY (home) REFERENCES house (id)
         ON DELETE SET NULL
     
-) ENGINE = InnoDB;-- Molly
-
-DROP TABLE IF EXISTS house;
-
-CREATE TABLE house(
-	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	style VARCHAR(255) NOT NULL,
-	constructed YEAR(4) NOT NULL,
-	purchased YEAR(4) NOT NULL,
-	bedrooms INT UNSIGNED NOT NULL,
-	bathrooms INT UNSIGNED NOT NULL,
-	sqft INT UNSIGNED NOT NULL,
-	levels INT UNSIGNED NOT NULL,
-	house_value INT UNSIGNED NOT NULL, -- value is an sql keyword so changed to house_value
-	address_id INT UNSIGNED DEFAULT NULL,
-	CONSTRAINT `address_id_fk`
-		FOREIGN KEY (address_id) REFERENCES address (id)
-		ON DELETE SET NULL
-) ENGINE=InnoDB;--Nathan
+) ENGINE = InnoDB;--Nathan
 --OG SPEC is mariadb
 
 CREATE TABLE address (
@@ -69,7 +70,9 @@ CREATE TABLE address (
     state VARCHAR(127) NOT NULL,
     postalCode INT UNSIGNED NOT NULL,
     house INT UNSIGNED DEFAULT NULL
-) ENGINE = innodb--Nathan
+) ENGINE = innodb
+
+--Nathan
 --OG SPEC is mariadb
 
 CREATE TABLE job (
