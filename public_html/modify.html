@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!--
+    Molly
+    html for neighborhood database, main index page
+-->
+
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>Search Neighborhood</title>
+       <link rel="stylesheet" href="index.css" type="text/css">
+   </head> 
+   <body id = "searchBody">
+        <ul class = "searchNav">
+            <li class = "index"><a href="index.html">Neighborhood Home Page</a></li>
+            <li class = "modify"><a href="view.html">View Neighborhood</a></li>
+            <li class = "search"><a href="search.html">Search Neighborhood</a></li>
+            <li class = "view"><a href="modify.html">Modify Neighborhood</a></li>
+        </ul>
+        <h2>Modify Neighborhood</h2>
+        <h3>Add/Update a Person</h3>
+        <form name = "addPerson">
+            First Name:
+            <input type = "text" name = "fName">
+            Last Name:
+            <input type = "text" name = "lName"><br>
+            Job ID:
+            <input type = "text" name = "jobID">
+            House ID:
+            <input type = "text" name = "houseID"><br>
+            <input type = "submit" value = "Add/Update Person" name = "addPerson">
+        </form><br>
+        <h3>Add/Update a Job</h3>
+        <form name = "addJob">
+            Job Title:
+            <input type = "text" name = "jobTitle">
+            Income:
+            <input type = "text" name = "income"><br>
+            Company:
+            <input type = "text" name = "company">
+            Education:
+            <input type = "text" name = "education"><br>
+            Person ID:
+            <input type = "text" name = "personID"><br>
+            <input type = "submit" value = "Add/Update Job" name = "addJob">
+        </form>
+        <h3>Add/Update a House</h3>
+        <form>
+            House style:
+            <input type = "text" name = "houseStyle">
+            Year House Constructed:
+            <input type = "text" name = "constructed">
+            Year House Purchased:
+            <input type = "text" name = "purchased"><br>
+            Number of Bedrooms:
+            <input type = "text" name = "bedrooms">
+            Number of Bathrooms:
+            <input type = "text" name = "bathrooms">
+            Square Feet:
+            <input type = "text" name = "sqft"><br>
+            Levels:
+            <input type = "text" name = "levels">
+            Address ID:
+            <input type = "text" name = "addressID"><br>
+            <input type = "submit" value = "Add/Update House" name = "addHouse">
+        </form><br>
+        <h3>Add/Update an Address</h3>
+        <form name = "addAddress">
+            Street Number:
+            <input type = "text" name = "number">
+            Suffix:
+            <input type = "text" name = "suffix">
+            Unit:
+            <input type = "text" name = "unit"><br> 
+            City:
+            <input type = "text" name = "unit">
+            State:
+            <input type = "text" name = "state">
+            Postal Code:
+            <input type = "text" name = "postalCode"><br>
+            <input type = "submit" value = "Add/Update Address" name = "addAddress">
+        </form><br>
+        <h3>Add/Update a Neighbor</h3>
+        <form name = "addNeighbor">
+            Person ID 1:
+            <input type = "text" name = "personID1">
+            Person ID 2:
+            <input type = "text" name = "personID2"><br>
+            <input type = "submit" value = "Add/Update Neighbor" name = "addNeighbor">
+        </form><br>
+        <h3>Add/Update Ownership</h3>
+        <form>
+            Person ID:
+            <input type = "text" name = "personID">
+            House ID:
+            <input type = "text" name = "personID"><br> 
+            <input type = "submit" value = "Add/Update Ownership" name = "addOwner">
+        </form>
+    </body>
+</html>

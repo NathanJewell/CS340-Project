@@ -2,11 +2,12 @@
     Molly css
 */
 
-.index, .personSearch, .viewManageAllPeople, .viewManageNeighbors, .viewPeopleByJob, .viewManageHouses{
+.index, .view, .search, .modify{
     display: inline;
     border: 2px solid #777777;
     font-weight: normal;
     background: #92acd6;
+    
 }
 
 a:link{
@@ -31,6 +32,7 @@ a:active{
     background-color: yellow;
 }
 
+/*
 th, td{
     border: 1px solid black;
 }
@@ -38,3 +40,4 @@ th, td{
 th{
     background-color: #92acd6 ;
 }
+*/
