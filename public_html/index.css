@@ -2,7 +2,7 @@
     Molly css
 */
 
-.index, .personSearch, .viewManageAllPeople, .viewManageNeighbors, .viewPeopleByJob{
+.index, .personSearch, .viewManageAllPeople, .viewManageNeighbors, .viewPeopleByJob, .viewManageHouses{
     display: inline;
     border: 2px solid #777777;
     font-weight: normal;

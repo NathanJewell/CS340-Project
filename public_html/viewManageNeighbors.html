@@ -14,10 +14,11 @@
    <body id = "viewManageNeighborsBody">
         <ul class = "viewManageNeighborsNav">
             <li class = "index"><a href="index.html">Home Page</a></li>
-            <li class = "personSearch"><a href="personSearch.html">Search for a Person/Update a House</a></li>
+            <li class = "personSearch"><a href="personSearch.html">Search for a Person</a></li>
             <li class = "viewManageAllPeople"><a href="viewManageAllPeople.html">View/Manage All People</a></li>
-            <li class = "viewManageNeighbors"><a href="viewManageNeighbors.html">View/Manage a Person's Neighbors</a></li> 
-            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job</a></li>
+            <li class = "viewManageNeighbors"><a href="viewManageNeighbors.html">View/Manage a Person's Neighbors</a></li>
+            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job/Manage Jobs</a></li>
+            <li class = "viewManageHouses"><a href="viewManageHouses.html">View/Manage Houses</a></li>
         </ul>
         <h2>View/Manage a Person's Neighbors</h2>
         <h3>Search for a Person to Find Their Neighbors</h3>
@@ -27,6 +28,14 @@
             Last Name:
             <input type = "text" name = "lname"><br>
             <input type = "submit" value = "Search for This Person's Neighbors" name = "searchPersonSubmit">
+        </form>
+        <h3>Add/Update a Neighbor</h3>
+        <form name = "addNeighbor">
+            Person ID 1:
+            <input type = "text" name = "@personID1"><br>
+            Person ID 2:
+            <input type = "text" name = "@personID2"><br>
+            <input type = "submit" value = "Add Neighbor" name = "searchPersonSubmit">
         </form><br>
         <table>
             <thead>
@@ -38,25 +47,25 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
                 </tr>
                 <tr>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
                 </tr>
                 <tr>
-                    <td>"data3"</td>
-                    <td>"data3"</td>
-                    <td>"data3"</td>
-                    <td>"data3"</td>
-                    <td>"data3"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
                 </tr>
             </tbody>
         </table>

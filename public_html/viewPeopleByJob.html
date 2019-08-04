@@ -14,11 +14,13 @@
    <body id = "viewPeopleByJobBody">
         <ul class = "viewPeopleByJobNav">
             <li class = "index"><a href="index.html">Home Page</a></li>
-            <li class = "personSearch"><a href="personSearch.html">Search for a Person/Update a House</a></li>
+            <li class = "personSearch"><a href="personSearch.html">Search for a Person</a></li>
             <li class = "viewManageAllPeople"><a href="viewManageAllPeople.html">View/Manage All People</a></li>
             <li class = "viewManageNeighbors"><a href="viewManageNeighbors.html">View/Manage a Person's Neighbors</a></li>
-            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job</a></li> 
+            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job/Manage Jobs</a></li>
+            <li class = "viewManageHouses"><a href="viewManageHouses.html">View/Manage Houses</a></li>
         </ul>
+        <h2>View/Manage People By Job</h2>
         <h3>View People by Job</h3>
         <select>
             <option value="job1">job1</option>
@@ -27,6 +29,20 @@
             <option value="job4">job4</option>
             <input type = "submit" value = "Filter by This Job"> 
         </select><br>
+        <h3>Add/Update a Job</h3>
+        <form name = "addJob">
+            Job Title:
+            <input type = "text" name = "@jobTitle">
+            Income:
+            <input type = "text" name = "@income"><br>
+            Company:
+            <input type = "text" name = "@company">
+            Education:
+            <input type = "text" name = "@education"><br>
+            Person ID:
+            <input type = "text" name = "@personID"><br>
+            <input type = "submit" value = "Add Job">
+        </form><br>
         <table>
            <thead>
                 <th>Job ID</th>
@@ -40,24 +56,24 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
-                    <td>"data1"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
                 </tr>
                 <tr>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
-                    <td>"data2"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
+                    <td>"data"</td>
                 </tr>
             </tbody><br>
         </table>
