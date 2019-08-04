@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<!--
+    Molly
+    html for neighborhood database, main index page
+-->
+
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>Search for a Person/Update a House</title>
+       <link rel="stylesheet" href="index.css" type="text/css">
+   </head> 
+   <body id = "personSearchBody">
+        <ul class = "personSearchNav">
+            <li class = "index"><a href="index.html">Home Page</a></li>
+            <li class = "personSearch"><a href="personSearch.html">Search for a Person/Update a House</a></li> 
+            <li class = "viewManageAllPeople"><a href="viewManageAllPeople.html">View/Manage All People</a></li>
+            <li class = "viewManageNeighbors"><a href="viewManageNeighbors.html">View/Manage a Person's Neighbors</a></li>
+            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job</a></li>
+        </ul>
+        <h3>Search for a Person:</h3>
+        <form name = "searchPerson">
+            First Name:
+            <input type = "text" name = "fname"><br>
+            Last Name:
+            <input type = "text" name = "lname"><br>
+            <input type = "submit" value = "Search" name = "searchPersonSubmit">
+        </form>
+        <h3>Update House for a Person</h3>
+        <form name = "updateHouse">
+            Person ID:
+            <input type = "text" name = "@personID">
+            Address ID:
+            <input type = "text" name = "@addressID"> 
+            House Style:            
+            <input type = "text" name = "@houseStyle"><br>
+            Year House Constructed:
+            <input type = "text" name = "@constructed">
+            Year House Purchased:
+            <input type = "text" name = "@purchased">
+            Number of Bedrooms:
+            <input type = "text" name = "@bedrooms"><br>
+            Number of Bathrooms:
+            <input type = "text" name = "@bathrooms">
+            Square Feet:
+            <input type = "text" name = "@sqft">
+            Levels:
+            <input type = "text" name = "@levels"><br>
+            <input type = "submit" value = "Update House"> 
+        </form>
+        <table>
+            <thead>
+                <th>Person ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Job ID</th>
+                <th>House ID</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                </tr>
+                <tr>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                </tr>
+            </tbody><br>
+            <thead>
+                <th>Job ID</th>
+                <th>Title</th>
+                <th>Income</th>
+                <th>Company</th>
+                <th>Education</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                </tr>
+                <tr>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                </tr>
+            </tbody>
+            <br>
+            <thead>
+                <th>House ID</th>
+                <th>Style</th>
+                <th>Year Constructed</th>
+                <th>Year Purchased</th>
+                <th>Number of Bedrooms</th>
+                <th>Number of Bathrooms</th>
+                <th>Square Feet</th>
+                <th>Levels</th>
+                <th>Home Value</th>
+                <th>Address ID</th>
+                <th>Delete Home</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td><input type = "submit" value = "Delete" name = "homeDelete"></td>
+                </tr>
+                <tr>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td>"data3"</td>
+                    <td><input type = "submit" value = "Delete" name = "homeDelete"></td>
+                </tr>
+            </tbody><br>
+            <thead>
+                <th>Address ID</th>
+                <th>House Number</th>
+                <th>Direction</th>
+                <th>Street Name</th>
+                <th>Suffix</th>
+                <th>Unit</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Postal Code</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                </tr>
+                <tr>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                    <td>"data4"</td>
+                </tr>
+
+            </tbody><br>
+        </table>
+   </body>
+</html>

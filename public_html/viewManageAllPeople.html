@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!--
+    Molly
+    html for neighborhood database, main index page
+-->
+
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>View/Manage All People</title>
+       <link rel="stylesheet" href="index.css" type="text/css">
+   </head> 
+   <body id = "viewManageAllPeopleBody">
+        <ul class = "viewManageAllPeopleNav">
+            <li class = "index"><a href="index.html">Home Page</a></li>
+            <li class = "personSearch"><a href="personSearch.html">Search for a Person/Update a House</a></li>
+            <li class = "viewManageAllPeople"><a href="viewManageAllPeople.html">View/Manage All People</a></li>
+            <li class = "viewManageNeighbors"><a href="viewManageNeighbors.html">View/Manage a Person's Neighbors</a></li>
+            <li class = "viewPeopleByJob"><a href="viewPeopleByJob.html">View People by Job</a></li>
+        </ul>
+        <h2>View/Manage All People</h2>
+        <h3>Add a Person</h3>
+        <form name = "addPerson">
+            First Name:
+            <input type = "text" name = "@fName">
+            Last Name:
+            <input type = "text" name = "@lName">
+            Job Title:
+            <input type = "text" name = "@jobTitle">
+            Income:
+            <input type = "text" name = "@income"><br>
+            Company:
+            <input type = "text" name = "@company">
+            Education:
+            <input type = "text" name = "@education">
+            Street Number:
+            <input type = "text" name = "@number">
+            Suffix:
+            <input type = "text" name = "@suffix"><br>
+            Unit:
+            <input type = "text" name = "@unit">
+            City:
+            <input type = "text" name = "@unit">
+            State:
+            <input type = "text" name = "@state">
+            Postal Code:
+            <input type = "text" name = "@postalCode"><br>
+            Person's House style:
+            <input type = "text" name = "@houseStyle">
+            Year House Constructed:
+            <input type = "text" name = "@constructed">
+            Year House Purchased:
+            <input type = "text" name = "@purchased"><br>
+            Number of Bedrooms:
+            <input type = "text" name = "@bedrooms">
+            Number of Bathrooms:
+            <input type = "text" name = "@bathrooms">
+            Square Feet:
+            <input type = "text" name = "@sqft">
+            Levels:
+            <input type = "text" name = "@levels"><br>
+            <input type = "submit" value = "Add Person to Neighborhood">
+        </form><br>
+        <table>
+            <thead>
+                <th>Person ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Job ID</th>
+                <th>House ID</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                    <td>"data1"</td>
+                </tr>
+                <tr>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                    <td>"data2"</td>
+                </tr>
+            </tbody>           
+        </table>
+   </body>
+</html>
