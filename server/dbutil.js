@@ -1,3 +1,5 @@
+var defaults = require("./defaults.js");
+
 module.exports = {
     loadQueryString: function(queryFile) {
         var queryString = "";
@@ -14,7 +16,7 @@ module.exports = {
         return queryString;
     },
 
-    fillAndExecute: function(queryString, data) {
+    fillAndExecute: function(queryString, data, response) {
         mysql = require('promise-mysql');
         return new Promise((resolve, reject) => {
 
@@ -23,17 +25,33 @@ module.exports = {
                 queryString.replace(key, val);
             }
 
-            if (queryString.includes("@")) {
-                reject([400, "Missing required fields."])
+            //check for limit/offset to enable pagination
+            let keys = Object.keys(data);
+
+            if (keys.includes("@limit")) {
+                if (keys.includes("@offset")) {
+                    queryString += ` OFFSET ${data["@offset"]}`;
+                }
+                queryString += ` LIMIT ${data["@limit"]}`;
+            } else {
+                queryString += ` LIMIT ${defaults.limit}`;
             }
 
-            mysql.pool.query(fillString, function(err, result) {
-                if (err) {
-                    reject(err);
-                    return;
-                }
-                resolve(result);
+            if (queryString.includes("@")) {
+                reject([400, "Missing required fields."]);
+            }
 
+            mysql.pool.then((pool) => {
+                pool.query(queryString).then((err, result) => {
+                    if (err) {
+                        reject(err);
+                    }
+                    console.log("Successfully executed query: \n\t" + queryString);
+                    resolve(result);
+
+                });
+            }).catch((err) => {
+                console.log("")
             });
         });
     }
