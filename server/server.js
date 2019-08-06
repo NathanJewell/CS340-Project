@@ -40,6 +40,10 @@ app.get('/', function(req, res, next) {
 app.use(express.json())
 app.use(express.urlencoded())
 
+app.use(function(req, res, next) {
+    console.log(req);
+    next();
+});
 app.use(function(req, res) {
     res.status(404);
     res.render('404');
