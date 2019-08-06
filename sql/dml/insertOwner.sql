@@ -6,6 +6,6 @@ INSERT INTO owner(
 	house_id
 )
 VALUES(
-	@person_id_input,
-	@house_id_input
+	@person_id,
+	@house_id
 );

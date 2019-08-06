@@ -1,12 +1,50 @@
 var defaults = require("../defaults.js");
+var dbutil = require("../dbutil.js");
 
 module.exports = {
     select: function(req, res) {
-        sqlFile = "selectHouse.sql";
+        collectionFile = "selectHouse.sql"
+        idFile = "selectHouseId.sql"
+        data = Object.assign({}, req.params, req.body, req.query);
+
+        sqlFile = collectionFile;
+        if (data.hasOwnProperty("id") && data.id != undefined) {
+            sqlFile = idFile;
+        }
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+
+        dbutil.fillAndExecute(query, data).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+                res.send("Query Successful")
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
     },
 
     insertUpdate: function(req, res) {
-        selectSql = "selectHouse.sql";
+        insertFile = "insertHouse.sql";
+        updateFile = "updateHouse.sql";
+
+        data = Object.assign({}, req.params, req.body, req.query);
+
+        sqlFile = insertFile;
+        if (data.hasOwnProperty("id") && data.id != undefined && dbutil.entryWithId(data["id"], "house")) {
+            sqlFile = updateFile;
+        }
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+
+        dbutil.fillAndExecute(query, data, false).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+                res.send("Query Successful")
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
         //check if house exists
         //if exists, update
         //if not exists, insert
@@ -14,5 +52,17 @@ module.exports = {
 
     delete: function(req, res) {
         sqlFile = "deleteHouse.sql";
+        data = Object.assign({}, req.params, req.body, req.query);
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+
+        dbutil.fillAndExecute(query, data, false).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+                res.send("Query Successful")
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
     }
 };

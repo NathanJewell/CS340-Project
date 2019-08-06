@@ -2,8 +2,8 @@
 
 -- insert a new neighbor
 INSERT INTO neighbor(
-	person_1_id,
-	person_2_id
+	pida,
+	pidb	
 )
 VALUES(
 	@person_1_id_input,

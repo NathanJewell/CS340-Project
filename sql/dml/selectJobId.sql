@@ -1,0 +1,1 @@
+SELECT * FROM job j WHERE j.id = @id

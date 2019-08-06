@@ -4,8 +4,4 @@
 -- join to find the matching house, remove owner relationship
 -- between the person and the house
 
-DELETE * FROM owner
-INNER JOIN P
-	ON O.person_id = 
-		(SELECT P.id FROM person P WHERE fname LIKE '%' + @first +
-		'%' AND lname LIKE '%' + @last + '%' LIMIT 1);
+DELETE FROM owner o WHERE o.person_id = @person_id AND o.house_id = @house_id

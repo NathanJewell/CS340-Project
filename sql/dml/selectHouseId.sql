@@ -1,0 +1,1 @@
+SELECT * FROM house h WHERE h.id = @id
