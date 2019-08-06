@@ -6,7 +6,7 @@
 
 <html lang="en">
 <head>
-  <title>Neighborhood Menu</title>
+  <title>Filter by Job</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -17,26 +17,25 @@
 <div class="container">
   <h3>Neighborhood Menu</h3>
   <ul class="nav nav-tabs">
-    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">View <span class="caret"></span></a>
-      <ul class="dropdown-menu">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">View <span class="caret"></span></a> 
+      <ul class="dropdown-menu"> 
         <li><a href="viewPeople.html">People</a></li>
         <li><a href="viewJobs.html">Jobs</a></li>
         <li><a href="viewNeighbors.html">Neighbors</a></li>                        
         <li><a href="viewHouses.html">Houses</a></li>                        
         <li><a href="viewAddresses.html">Addresses</a></li>                        
         <li><a href="viewOwners.html">Owners</a></li>                        
-      </ul>
-    </li>
+      </ul></li>
     <li class="dropdown">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search/Filter <span class="caret"></span></a>
+     <li class= "active"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search/Filter <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="personSearch.html">Search for a Person</a></li>
         <li><a href="jobSearch.html">Filter By Job</a></li>                        
         <li><a href="neighborSearch.html">Search for a Person's Neighbors</a></li>                        
         <li><a href="ownerSearch.html">Identify an Owner of a House</a></li>                        
-      </ul>
+      </ul></li> 
     </li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Modify <span class="caret"></span></a>
@@ -50,7 +49,16 @@
       </ul>
     </li>
   </ul>
-  <br><h5>Welcome to Your Neighborhood. Use the Menu to View, Modify and Search.</h5>
+  <br><h5>Filter by Job</h5>
+ <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Jobs
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Job1</a></li>
+    <li><a href="#">Job2</a></li>
+    <li><a href="#">Job3</a></li>
+  </ul>
+</div> 
 </div>
 </body>
 </html>
