@@ -50,7 +50,30 @@
     </li>
   </ul>
   <br><h5>Modify a Job</h5>
-  <span>FORM WILL BE HERE</span>
+  <h6>If the Job ID entered exists, will update that job. If you're adding a job instead of updating, leave Job ID blank.</h6>
+  <form id="modifyJob">
+    <div class="form-group">
+      <label for="jobID">Job ID</label>
+      <input type="text" class="form-control" id="jobID">
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title">
+    </div>
+    <div class="form-group">
+      <label for="income">Income</label>
+      <input type="text" class="form-control" id="income">
+    </div> 
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company">
+    </div>
+    <div class="form-group">
+      <label for="education">Education</label>
+      <input type="text" class="form-control" id="education">
+    </div>
+  <button type="submit" class="btn btn-primary">Add/Update Job</button>
+</form>
 </div>
 </body>
 </html>
