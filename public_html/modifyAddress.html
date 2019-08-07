@@ -50,7 +50,46 @@
     </li>
   </ul>
   <br><h5>Modify an Address</h5>
-  <span>FORM WILL BE HERE</span>
+  <h6>If the Address ID entered exists, will update that address. If you're adding an address instead of updating, leave Address ID blank.</h6>
+  <form id="modifyAddress">
+    <div class="form-group">
+      <label for="addressID">Address ID</label>
+      <input type="text" class="form-control" id="addressID">
+    </div>
+    <div class="form-group">
+      <label for="number">House Number</label>
+      <input type="text" class="form-control" id="number">
+    </div>
+    <div class="form-group">
+      <label for="direction">Street Direction</label>
+      <input type="text" class="form-control" id="direction">
+    </div> 
+    <div class="form-group">
+      <label for="streetName">Street Name</label>
+      <input type="text" class="form-control" id="streetName">
+    </div>
+    <div class="form-group">
+      <label for="suffix">Street Suffix</label>
+      <input type="text" class="form-control" id="suffix">
+    </div>
+    <div class="form-group">
+      <label for="unit">Apt/Unit</label>
+      <input type="text" class="form-control" id="unit">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state">
+    </div>
+    <div class="form-group">
+      <label for="postalCode">5-Digit Postal Code</label>
+      <input type="text" class="form-control" id="postalCode">
+    </div>
+  <button type="submit" class="btn btn-primary">Add/Update Address</button>
+</form>
 </div>
 </body>
 </html>
