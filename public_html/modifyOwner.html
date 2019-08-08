@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!--
+    Molly
+    -bootstrap used as CSS styling framework and adapted from documentation provided by:
+    https://getbootstrap.com/docs/ and https://www.w3schools.com/bootstrap/default.asp 
+-->
+
+<html lang="en">
+<head>
+  <title>Modify an Owner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h3>Neighborhood Menu</h3>
+  <ul class="nav nav-tabs">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">View <span class="caret"></span></a> 
+      <ul class="dropdown-menu"> 
+        <li><a href="viewPeople.html">People</a></li>
+        <li><a href="viewJobs.html">Jobs</a></li>
+        <li><a href="viewNeighbors.html">Neighbors</a></li>                        
+        <li><a href="viewHouses.html">Houses</a></li>                        
+        <li><a href="viewAddresses.html">Addresses</a></li>                        
+        <li><a href="viewOwners.html">Owners</a></li>                        
+      </ul></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search/Filter <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="personSearch.html">Search for a Person</a></li>
+        <li><a href="jobSearch.html">Filter By Job</a></li>                        
+        <li><a href="neighborSearch.html">Search for a Person's Neighbors</a></li>                        
+        <li><a href="ownerSearch.html">Identify an Owner of a House</a></li>                        
+      </ul> 
+    </li>
+    <li class="dropdown">
+     <li class= "active"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Modify <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="modifyPerson.html">Person</a></li>
+        <li><a href="modifyJob.html">Job</a></li>
+        <li><a href="modifyNeighbor.html">Neighbor</a></li>                        
+        <li><a href="modifyHouse.html">House</a></li>                        
+        <li><a href="modifyAddress.html">Address</a></li>                        
+        <li><a href="modifyOwner.html">Owner</a></li>                        
+      </ul></li> 
+    </li>
+  </ul>
+  <br><h5>Modify an Owner</h5>
+  <h6>If the first House ID entered exists with that Person ID, will update that owner relationship with that person to be with the second House ID.</h6>
+  <h6>If you're adding an owner instead of updating, leave the first House ID blank and only enter the Person ID and second House ID.</h6>
+  <form id="modifyOwner">
+    <div class="form-group">
+      <label for="personID">Person ID</label>
+      <input type="text" class="form-control" id="personID">
+    </div>
+    <div class="form-group">
+      <label for="house1ID">House 1 ID</label>
+      <input type="text" class="form-control" id="house1ID">
+    </div>
+    <div class="form-group">
+      <label for="house2ID">House 2 ID</label>
+      <input type="text" class="form-control" id="house2ID">
+    </div>
+  <button type="submit" class="btn btn-primary">Add/Update an Owner</button>
+</form>
+</div>
+</body>
+</html>

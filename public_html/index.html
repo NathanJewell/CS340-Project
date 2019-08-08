@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!--
+    Molly index
+    -bootstrap used as CSS styling framework and adapted from documentation provided by:
+    https://getbootstrap.com/docs/ and https://www.w3schools.com/bootstrap/default.asp 
+
+-->
+
+<html lang="en">
+<head>
+  <title>Neighborhood Menu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+    $(function() {
+      $('#headerMenu').load("headerMenu.html");
+      $.ajax({
+        url : "http://flip2.engr.oregonstate.edu:5267/house",
+        type : "get"
+      }).fail((xhr, status, err) => {
+        console.log(xhr.statusText);
+        console.log(status);
+        console.log(err);
+      }).then((response) => {
+        console.log(response);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div id="headerMenu"></div>
+    <br><h5>Welcome to Your Neighborhood. Use the Menu to View, Modify and Search.</h5>
+  </div>
+</body>
+</html>

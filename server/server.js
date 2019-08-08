@@ -15,6 +15,20 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
+
+app.get('/', function(req, res, next) {
+    res.status(200);
+    res.render('home', { results: "Welcome to my neighborhood." })
+});
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+
+});
+app.use(express.json())
+app.use(express.urlencoded())
+
 //define api routes
 app.get('/address/:id?', address.select);
 app.post('/address', address.insert);
@@ -31,14 +45,6 @@ app.post('/owner', owner.insertUpdate);
 app.delete('/owner', owner.delete);
 app.get('/person/:id?', person.select);
 app.post('/person', person.insert);
-
-app.get('/', function(req, res, next) {
-    res.status(200);
-    res.render('home', { results: "Welcome to my neighborhood." })
-});
-
-app.use(express.json())
-app.use(express.urlencoded())
 
 app.use(function(req, res, next) {
     console.log(req);
