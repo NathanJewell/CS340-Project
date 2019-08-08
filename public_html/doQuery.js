@@ -2,12 +2,17 @@ let BaseApiUrl = "http://flip2.engr.oregonstate.edu:5267/"
 
 var assembleQuery = function(formParent) {
     data = {};
-    for (c in formParent.children(".form-input").toArray()) {
+    formParent.find(".form-control").each((i, c) => {
         child = $(c);
         key = child.attr("tag");
-        val = child.attr("value");
-        data[key] = val
-    }
+        val = child.val();
+        placeholder = child.attr("placeholder");
+        if (val == "" && placeholder != undefined) {
+            val = placeholder
+        }
+
+        data[key] = val;
+    });
     return data;
     //for child of form parent with "tag" attribute
     //add to object a new attribute with key=valueof("tag"), value=formFieldValue
@@ -52,6 +57,55 @@ tryTableLoad = function() {
     }
 }
 
+setTableData = function(tableSelector, data) {
+    //if the table element exists and defines a uri, we are going to load that collection automagically
+    let columns = []
+    for (let [k, v] of Object.entries(response[0])) {
+        if (v != undefined) {
+            columns.push({ title: k, field: k });
+        }
+    }
+    var table = new Tabulator(tableSelector, {
+        height: 100,
+        data: data,
+        layout: 'fitColumns',
+        columns: columns
+    });
+}
+
+clearPlaceHolders = function() {
+    $(".formfill").find(".form-control").each((i, obj) => {
+        if ($(obj).hasClass("validatedID") == false) {
+            $(obj).removeAttr("placeholder");
+        }
+    });
+}
+
+setFormPlaceHolders = function(id) {
+    uri = $(".formfill").attr("uri") + "/" + id;
+    sendRequest("GET", uri, {}, {}).done((data) => {
+        if (data.length) {
+            let o = Object.entries(data[0]);
+            for (let [k, v] of o) {
+                if (v != undefined && k != "id") {
+                    $("[tag=" + k + "]").attr("placeholder", v);
+                }
+            }
+            $("#validatorText").text("ID Validated - Updating");
+        } else {
+            console.log("ID IS INVALID");
+            $("#validatorText").text("ID Nonexistent - Do not submit");
+            clearPlaceHolders();
+        }
+    }).fail((xhr, status, err) => {
+        console.log(">> error while validating");
+        $("#validatorText").text(">> Error while validating ID");
+        clearPlaceHolders();
+    });
+}
+
+
+
 $(document).ready(() => {
 
     //the api does not distinguish between /collection/<id> and /collection?id=<id>
@@ -62,8 +116,8 @@ $(document).ready(() => {
     //ON EACH INPUT ELEMENT USE THE form-input class
 
     $('.query.GET').on('click', (e) => {
-        var submitter = $(e.target);
-        var data = assembleQuery(submitter.parent('form'));
+        var submitter = $('.formfill');
+        var data = assembleQuery(submitter);
 
         sendRequest("GET", submitter.attr("uri"), data, {})
             .done((response) => {
@@ -83,8 +137,9 @@ $(document).ready(() => {
     });
 
     $('.query.POST').on('click', (e) => {
-        var submitter = $(e.target);
-        var data = assembleQuery(submitter.parent('form'));
+        var submitter = $('.formfill');
+        var data = assembleQuery(submitter);
+        console.log("NOW SUBMITTING");
 
         sendRequest("POST", submitter.attr("uri"), {}, data);
         //assemble the query from tagged html elements in the form.
@@ -93,14 +148,29 @@ $(document).ready(() => {
     });
 
     $('.query.DELETE').on('click', (e) => {
-        var submitter = $(e.target);
-        var data = assembleQuery(submitter.parent('form'));
+        var submitter = $('.formfill');
+        var data = assembleQuery(submitter);
 
-        sendRequest("POST", submitter.attr("uri"), data, {});
+        sendRequest("POST", submitter.attr("uri"), data, {}).done((reponse) => {
+            $("#status").text(response);
+        }).fail((xhr, status, err) => {
+            console.log("Request failed.");
+            $("#status").text("Request failed, try again sucka.");
+        });
         //assemble the query from tagged html elements in the form.
         //create qstring from json query (if any)
         //send GET with ajax
         //do associated callback (create table/display message etc)
+    });
+
+    $(".validatedID").on('input', (e) => {
+        id = $(e.target).val();
+        $("#validatorText").text("No ID Entered - Inserting");
+        if (id != "") {
+            setFormPlaceHolders(id);
+        } else {
+            clearPlaceHolders();
+        }
     });
 
 
@@ -119,4 +189,11 @@ $(document).ready(() => {
     });
 
     tryTableLoad();
+
+    $("#validatorText").text("No ID Entered - Inserting");
+    if ($(".validatedID").val() != "") {
+        setFormPlaceHolders($(".validatedID").val());
+    } else {
+        clearPlaceHolders();
+    }
 });

@@ -12,9 +12,13 @@
   <title>Modify a House</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -54,48 +58,49 @@
   </ul>
   <br><h5>Modify a House</h5>
   <h6>If the House ID entered exists, will update that house. If you're adding a house instead of updating, leave House ID blank.</h6>
-  <form id="modifyHouse">
+  <form class="formfill" uri="house" >
     <div class="form-group">
       <label for="houseID">House ID</label>
-      <input type="text" class="form-control" id="houseID">
+      <input type="text" class="form-control validatedID" id="houseId" tag="id" placeholder="Only use for updating">
+      <h5 id="validatorText"></h5>
     </div>
     <div class="form-group">
       <label for="style">Architectural Style</label>
-      <input type="text" class="form-control" id="style">
+      <input type="text" class="form-control" id="style" tag="style">
     </div>
     <div class="form-group">
       <label for="constructed">Year Constructed</label>
-      <input type="text" class="form-control" id="constructed">
+      <input type="text" class="form-control" id="constructed" tag="constructed">
     </div> 
     <div class="form-group">
       <label for="purchased">Year Last Purchased</label>
-      <input type="text" class="form-control" id="purchased">
+      <input type="text" class="form-control" id="purchased" tag="purchased">
     </div>
     <div class="form-group">
       <label for="bedrooms">Number of Bedrooms</label>
-      <input type="text" class="form-control" id="bedrooms">
+      <input type="text" class="form-control" id="bedrooms" tag="bedrooms">
     </div>
     <div class="form-group">
       <label for="bathrooms">Number of Bathrooms</label>
-      <input type="text" class="form-control" id="bathrooms">
+      <input type="text" class="form-control" id="bathrooms" tag="bathrooms">
     </div>
     <div class="form-group">
       <label for="sqft">Square Feet</label>
-      <input type="text" class="form-control" id="sqft">
+      <input type="text" class="form-control" id="sqft" tag="sqft">
     </div>
     <div class="form-group">
       <label for="levels">Number of Levels</label>
-      <input type="text" class="form-control" id="levels">
+      <input type="text" class="form-control" id="levels" tag="levels">
     </div>
     <div class="form-group">
       <label for="value">Current Value</label>
-      <input type="text" class="form-control" id="value">
+      <input type="text" class="form-control" id="value" tag="house_value">
     </div>
     <div class="form-group">
       <label for="addressID">Address ID</label>
-      <input type="text" class="form-control" id="addressID">
+      <input type="text" class="form-control" id="addressID" tag="address_id">
     </div>
-    <button type="submit" class="btn btn-primary">Add/Update House</button>
+    <input type="btn-primary" class="btn btn-primary query POST" value="Add/Update House"></input>
   </form>
 </div>
 </body>

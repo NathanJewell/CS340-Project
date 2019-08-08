@@ -14,5 +14,5 @@
 UPDATE house H 
 SET H.style = @style, H.purchased = @purchased,
 	H.bedrooms = @bedrooms, H.bathrooms = @bathrooms, H.sqft = 
-	@sqft, H.levels = @levels, H.house= @house_value
+	@sqft, H.levels = @levels, H.house_value = @house_value
 WHERE H.id = @id

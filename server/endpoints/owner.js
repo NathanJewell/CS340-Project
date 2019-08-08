@@ -20,8 +20,7 @@ module.exports = {
     },
 
     insertUpdate: function(req, res) {
-        updateFile = "updateOwner.sql"
-        insertFile = "insertOwner.sql"
+        sqlFile = "insertOwner.sql"
         data = Object.assign({}, req.params, req.body, req.query);
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
 
