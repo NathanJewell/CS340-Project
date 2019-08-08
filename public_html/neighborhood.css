@@ -1,0 +1,14 @@
+.table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.paginator {
+    margin-top: 20px;
+}
+
+#currentPage {
+    font-size: 150%;
+    font-style: oblique;
+    text-align: center;
+}

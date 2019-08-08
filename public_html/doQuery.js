@@ -23,55 +23,6 @@ var sendRequest = function(method, uri, qstringData, jsonBodyData) {
     });
 };
 
-//the api does not distinguish between /collection/<id> and /collection?id=<id>
-//ON EACH SUBMIT BUTTON SPECIFY THE FOLLOWING
-// class .query, .<METHOD>
-// uri <THE URI EXTENSION TO QUERY>
-// TBD THIS MAY BE UNEEDED tableid <THE ID OF THE TABLE>
-//ON EACH INPUT ELEMENT USE THE form-input class
-
-$('.query.GET').on('click', (e) => {
-    var submitter = $(e.target);
-    var data = assembleQuery(submitter.parent('form'));
-
-    sendRequest("GET", submitter.attr("uri"), data, {})
-        .done((response) => {
-            $('#responseTable').bootstrapTable({
-                data: $.parseJSON(data)
-            })
-        })
-        .fail((xhr, status, err) => {
-            console.log("Request failed");
-            console.log(xhr);
-            console.log(status);
-        });
-    //assemble the query from tagged html elements in the form.
-    //create qstring from json query (if any)
-    //send GET with ajax
-    //do associated callback (create table/display message etc)
-});
-
-$('.query.POST').on('click', (e) => {
-    var submitter = $(e.target);
-    var data = assembleQuery(submitter.parent('form'));
-
-    sendRequest("POST", submitter.attr("uri"), {}, data);
-    //assemble the query from tagged html elements in the form.
-    //send POST with ajax
-    //do associated callback (create table/display message etc)
-});
-
-$('.query.DELETE').on('click', (e) => {
-    var submitter = $(e.target);
-    var data = assembleQuery(submitter.parent('form'));
-
-    sendRequest("POST", submitter.attr("uri"), data, {});
-    //assemble the query from tagged html elements in the form.
-    //create qstring from json query (if any)
-    //send GET with ajax
-    //do associated callback (create table/display message etc)
-});
-
 var currentPage = 1
 
 tryTableLoad = function() {
@@ -83,17 +34,11 @@ tryTableLoad = function() {
         if (uri) {
             sendRequest("GET", uri, { "limit": limit, offset: (currentPage - 1) * limit }, {}).done((response) => {
                 let columns = []
-                console.log(response[0])
-                console.log(Object.entries(response[0]));
                 for (let [k, v] of Object.entries(response[0])) {
-                    console.log(k);
-                    console.log(v);
                     if (v != undefined) {
                         columns.push({ title: k, field: k });
                     }
                 }
-                console.log(columns);
-                console.log(response);
                 var table = new Tabulator("#dataTable", {
                     height: 400,
                     data: response,
@@ -107,20 +52,71 @@ tryTableLoad = function() {
     }
 }
 
-$("#nextPage").on('click', (e) => {
-    currentPage += 1;
-    $("#currentPage").innerHTML(currentPage);
-    tryTableLoad();
-});
-
-$("#nextPage").on('click', (e) => {
-    if (currentPage >= 1) {
-        currentPage -= 1;
-        $("#currentPage").innerHTML(currentPage);
-        tryTableLoad();
-    }
-});
-
 $(document).ready(() => {
+
+    //the api does not distinguish between /collection/<id> and /collection?id=<id>
+    //ON EACH SUBMIT BUTTON SPECIFY THE FOLLOWING
+    // class .query, .<METHOD>
+    // uri <THE URI EXTENSION TO QUERY>
+    // TBD THIS MAY BE UNEEDED tableid <THE ID OF THE TABLE>
+    //ON EACH INPUT ELEMENT USE THE form-input class
+
+    $('.query.GET').on('click', (e) => {
+        var submitter = $(e.target);
+        var data = assembleQuery(submitter.parent('form'));
+
+        sendRequest("GET", submitter.attr("uri"), data, {})
+            .done((response) => {
+                $('#responseTable').bootstrapTable({
+                    data: $.parseJSON(data)
+                })
+            })
+            .fail((xhr, status, err) => {
+                console.log("Request failed");
+                console.log(xhr);
+                console.log(status);
+            });
+        //assemble the query from tagged html elements in the form.
+        //create qstring from json query (if any)
+        //send GET with ajax
+        //do associated callback (create table/display message etc)
+    });
+
+    $('.query.POST').on('click', (e) => {
+        var submitter = $(e.target);
+        var data = assembleQuery(submitter.parent('form'));
+
+        sendRequest("POST", submitter.attr("uri"), {}, data);
+        //assemble the query from tagged html elements in the form.
+        //send POST with ajax
+        //do associated callback (create table/display message etc)
+    });
+
+    $('.query.DELETE').on('click', (e) => {
+        var submitter = $(e.target);
+        var data = assembleQuery(submitter.parent('form'));
+
+        sendRequest("POST", submitter.attr("uri"), data, {});
+        //assemble the query from tagged html elements in the form.
+        //create qstring from json query (if any)
+        //send GET with ajax
+        //do associated callback (create table/display message etc)
+    });
+
+
+    $(document.body).on('click', "#nextPage", (e) => {
+        currentPage += 1;
+        $("#currentPage").text(currentPage);
+        tryTableLoad();
+    });
+
+    $(document.body).on('click', "#prevPage", (e) => {
+        if (currentPage > 1) {
+            currentPage -= 1;
+            $("#currentPage").text(currentPage);
+            tryTableLoad();
+        }
+    });
+
     tryTableLoad();
 });
