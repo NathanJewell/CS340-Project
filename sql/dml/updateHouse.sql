@@ -12,7 +12,7 @@
  		--@city_input + '%' AND postalCode LIKE '%' + @postalCode_input + '%' LIMIT 1); 
 
 UPDATE house
-SET house.style = @style, house.purchased = @purchased,
-	house.bedrooms = @bedrooms, house.bathrooms = @bathrooms, house.sqft = 
-	@sqft, house.levels = @levels, house.house_value = @house_value
-WHERE house.id = @id
+SET style = @style, purchased = @purchased,
+	bedrooms = @bedrooms, bathrooms = @bathrooms, sqft = @sqft,
+	levels = @levels, house_value = @house_value
+WHERE id = @id
