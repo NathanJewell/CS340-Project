@@ -11,8 +11,8 @@
  		--AND streetName LIKE '%' + @streetName_input + '%' AND city LIKE '%' + 
  		--@city_input + '%' AND postalCode LIKE '%' + @postalCode_input + '%' LIMIT 1); 
 
-UPDATE house H 
-SET H.style = @style, H.purchased = @purchased,
-	H.bedrooms = @bedrooms, H.bathrooms = @bathrooms, H.sqft = 
-	@sqft, H.levels = @levels, H.house_value = @house_value
+UPDATE house
+SET house.style = @style, house.purchased = @purchased,
+	house.bedrooms = @bedrooms, house.bathrooms = @bathrooms, house.sqft = 
+	@sqft, house.levels = @levels, house.house_value = @house_value
 WHERE H.id = @id
