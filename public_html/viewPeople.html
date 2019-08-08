@@ -11,9 +11,13 @@
   <title>View People</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,8 +56,25 @@
       </ul>
     </li>
   </ul>
-  <br><h5>View People</h5>
-  <span>TABLE FOR RETURNED DATA WILL BE HERE</span>
+  <br>
+  
+  <h2>View People</h2>
+  <span>The collection of people is below.</span>
+  <div class="table" id="dataTable" uri="person" limit=20></div>
+   
+  <div class="row-sm paginator">
+    <div class="col-sm-5 text-right">
+      <button type="button" id="prevPage" class="btn btn-primary">Previous</button>
+    </div>
+    <div class="col-sm-2 text-center">
+      <span id="currentPage" class="text-lg">1</span>
+    </div>
+    <div class="col-sm-5 text-left">
+      <button type="button" id="nextPage" class="btn btn-primary">Next</button>
+    </div>
+  </div>
+
+
 </div>
 </body>
 </html>
