@@ -18,7 +18,7 @@ module.exports = {
     },
 
     fillAndExecute: function(queryString, data, usePaginationFeatures = true) {
-        mysql = require('./dbcon.js');
+        mysql = require('./dbcon_local.js/index.js');
         return new Promise((resolve, reject) => {
             //do parameter substituion from passed qstring
             for (let [key, val] of Object.entries(data)) {
@@ -67,7 +67,7 @@ module.exports = {
     },
 
     entryWithId: function(id, table) {
-        mysql = require('./dbcon.js');
+        mysql = require('./dbcon_local.js/index.js');
         return new Promise((resolve, reject) => {
             queryString = "SELECT 1 FROM " + table + " WHERE table.id=" + id;
             //must reject if unfilled params remain
