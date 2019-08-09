@@ -43,15 +43,15 @@ app.get('/neighbor', neighbor.select);
 app.post('/neighbor', neighbor.insert);
 app.delete('/neighbor/:id?', neighbor.delete);
 app.get('/owner', owner.select);
-app.post('/owner', owner.insertUpdate);
+app.post('/owner', owner.insert);
 app.delete('/owner/:id?', owner.delete);
 app.get('/person/:id?', person.select);
 app.post('/person', person.insertUpdate);
 app.delete('/person/:id?', person.delete);
 
-app.options('/', (req, res) => {
+app.options('*', (req, res) => {
     res.header("Allow", "GET, POST, DELETE, OPTIONS");
-    res.header("Acess-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
+    res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
     res.status(204);
     res.send("OK");
 });

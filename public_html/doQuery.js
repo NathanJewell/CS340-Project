@@ -1,4 +1,32 @@
-let BaseApiUrl = "http://flip2.engr.oregonstate.edu:5267/"
+//let portChoices = ["5265", "0"]
+//var BaseApiUrl = "http://flip2.engr.oregonstate.edu:"
+//var goodPort = false;
+//for (let port of portChoices) {
+    //url = BaseApiUrl + port + "/";
+    //console.log(url);
+    //try {
+        //let res = $.ajax({
+            //url : url,
+            //type: "GET"
+        //});
+        //console.log(res);
+        //if (res.status) {
+            //BaseApiUrl = url;
+            //goodPort = true;
+            //break;
+        //}
+
+    //} catch (e) {
+        //continue;
+    //}
+//}
+
+//if (goodPort) {
+    //console.log("Found server.");
+//} else {
+    //console.log("UNABLE TO CONTACT THE SERVER. PLEASE CONTACT NATHAN JEWELL");
+//}
+var BaseApiUrl = "http://flip2.engr.oregonstate.edu:5265/"
 
 var assembleQuery = function(formParent) {
     data = {};
@@ -8,7 +36,7 @@ var assembleQuery = function(formParent) {
         val = child.val();
         quote = child.attr("quoted");
         placeholder = child.attr("placeholder");
-        if (val == "" && placeholder != undefined) {
+        if (val == "" && placeholder != undefined && key != "id") {
             val = placeholder
         }
         if (quote == true) {
@@ -106,29 +134,31 @@ disableSubmission = function() {
 }
 
 setFormPlaceHolders = function(id) {
-    uri = $(".formfill").attr("uri") + "/" + id;
-    sendRequest("GET", uri, {}, {}).done((data) => {
-        if (data.length) {
-            let o = Object.entries(data[0]);
-            for (let [k, v] of o) {
-                if (v != undefined && k != "id") {
-                    $("[tag=" + k + "]").attr("placeholder", v);
+    if ($(".validatedID").length) {
+        uri = $(".formfill").attr("uri") + "/" + id;
+        sendRequest("GET", uri, {}, {}).done((data) => {
+            if (data.length) {
+                let o = Object.entries(data[0]);
+                for (let [k, v] of o) {
+                    if (v != undefined && k != "id") {
+                        $("[tag=" + k + "]").attr("placeholder", v);
+                    }
                 }
+                $("#validatorText").text("ID Validated - Updating");
+                enableSubmission("Update");
+            } else {
+                console.log("ID IS INVALID");
+                $("#validatorText").text("ID Nonexistent - Do not submit");
+                disableSubmission();
+                clearPlaceHolders();
             }
-            $("#validatorText").text("ID Validated - Updating");
-            enableSubmission("Update");
-        } else {
-            console.log("ID IS INVALID");
-            $("#validatorText").text("ID Nonexistent - Do not submit");
-            disableSubmission();
+        }).fail((xhr, status, err) => {
+            console.log(">> error while validating");
+            $("#validatorText").text("Cannot Validate That ID");
+            disableSubmission()
             clearPlaceHolders();
-        }
-    }).fail((xhr, status, err) => {
-        console.log(">> error while validating");
-        $("#validatorText").text("Cannot Validate That ID");
-        disableSubmission()
-        clearPlaceHolders();
-    });
+        });
+    }
 }
 
 
@@ -173,7 +203,7 @@ $(document).ready(() => {
                 clearValues();
                 setFormPlaceHolders($(".validatedID").val());
             }).fail((xhr, status, err) => {
-                $("#statusText").text("Request failed, try again sucka.");
+                $("#statusText").text("Request failed, try again sucka. (Does the PK allready exist?)");
             })
             //assemble the query from tagged html elements in the form.
             //send POST with ajax
@@ -184,7 +214,8 @@ $(document).ready(() => {
         var submitter = $('.formfill');
         var data = { id: $(".validatedID").val() };
 
-        sendRequest("DELETE", submitter.attr("uri"), data, {}).done((reponse) => {
+        sendRequest("DELETE", submitter.attr("uri"), data, {}).done((response) => {
+            console.log(response);
             $("#statusText").text(JSON.stringify(response));
             clearValues();
             clearPlaceHolders();
@@ -209,6 +240,9 @@ $(document).ready(() => {
         }
     });
 
+    $(".btn").on('click', (e) => {
+        $(e.target).blur();
+    });
 
     $(document.body).on('click', "#nextPage", (e) => {
         currentPage += 1;
@@ -231,5 +265,7 @@ $(document).ready(() => {
         setFormPlaceHolders($(".validatedID").val());
     } else {
         clearPlaceHolders();
+        disableSubmission("Update");
+        enableSubmission("Insert");
     }
 });

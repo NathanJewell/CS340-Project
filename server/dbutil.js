@@ -54,11 +54,13 @@ module.exports = {
                     resolve(sqlResponse);
 
                 }).catch((err) => {
-                    reject({
+                    msg = {
                         status: 400,
                         reason: "Query did not execute successfully:\n" + err + "\n" + queryString,
                         query: queryString
-                    });
+                    };
+                    console.log(msg);
+                    reject(msg);
                 });
             }).catch((err) => {
                 console.log("Unable to connect to db.\n" + err);

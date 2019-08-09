@@ -2,5 +2,5 @@ UPDATE person SET
 fname = @fname,
 lname = @lname,
 job = @job,
-house = @house
+home = @home
 WHERE id = @id

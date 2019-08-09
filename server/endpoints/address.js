@@ -40,6 +40,7 @@ module.exports = {
                 console.log("UNABLE TO VALIDATE ID FOR ADDRESS UPDATE/INSERT");
                 res.status = e.status;
                 res.send(e.reason);
+                return;
             }
         }
 
