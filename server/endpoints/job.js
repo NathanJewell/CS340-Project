@@ -23,16 +23,32 @@ module.exports = {
             res.send(err.reason)
         });
     },
-    insert: function(req, res) {
-        sqlFile = "insertJob.sql";
+    insertUpdate: async function(req, res) {
+        insertFile = "insertJob.sql";
+        updateFile = "updateJob.sql";
+
         data = Object.assign({}, req.params, req.body, req.query);
+
+        sqlFile = insertFile;
+        if (data.hasOwnProperty("id") && data.id != undefined) {
+            try {
+                isValidId = await dbutil.entryWithId(data["id"], "job");
+                if (isValidId) {
+                    sqlFile = updateFile;
+                }
+            } catch (e) {
+                console.log("UNABLE TO VALIDATE ID FOR JOB UPDATE/INSERT");
+                res.status = e.status;
+                res.send(e.reason);
+            }
+        }
+
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
 
         dbutil.fillAndExecute(query, data, false).then(
             (sqlData) => {
                 res.status = 200;
                 res.json(sqlData);
-                res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;
             res.send(err.reason)

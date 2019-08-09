@@ -10,10 +10,13 @@
 <head>
   <title>Modify a Person</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,28 +56,30 @@
   </ul>
   <br><h5>Modify a Person</h5>
   <h6>If the Person ID entered exists, will update that person. If you're adding a person instead of updating, leave Person ID blank.</h6>
-  <form id="modifyPerson">
+  <h5 id="statusText"></h5>
+  <form class = "formfill" uri="person">
     <div class="form-group">
       <label for="personID">Person ID</label>
-      <input type="text" class="form-control" id="personID">
+      <input type="text" class="form-control validatedID" id="personID" tag="id">
+      <h5 id="validatorText"></h5>
     </div>
     <div class="form-group">
       <label for="fName">First Name</label>
-      <input type="text" class="form-control" id="fname">
+      <input type="text" class="form-control" id="fname" tag="fname" quoted=1>
     </div>
     <div class="form-group">
       <label for="lName">Last Name</label>
-      <input type="text" class="form-control" id="lname">
+      <input type="text" class="form-control" id="lname" tag="lname" quoted=1>
     </div> 
     <div class="form-group">
       <label for="jobID">Job ID</label>
-      <input type="text" class="form-control" id="jobID">
+      <input type="text" class="form-control" id="jobID" tag="job">
     </div>
     <div class="form-group">
       <label for="houseID">House ID</label>
-      <input type="text" class="form-control" id="houseID">
+      <input type="text" class="form-control" id="houseID" tag="home">
     </div>
-  <button type="submit" class="btn btn-primary">Add/Update Person</button>
+  <input type="btn-primary" class="btn btn-primary query POST" value="Add/Update Person"></input>
 </form>
 </div>
 </body>

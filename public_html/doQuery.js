@@ -48,9 +48,9 @@ tryTableLoad = function() {
                     }
                 }
                 var table = new Tabulator("#dataTable", {
-                    height: 400,
+                    height: 600,
                     data: response,
-                    layout: 'fitColumns',
+                    layout: 'fitDataFill',
                     columns: columns
                 });
             }).fail((xhr) => {
@@ -92,6 +92,15 @@ clearValues = function() {
     });
 }
 
+enableSubmission = function(text = "Add/Update") {
+    $(".query").removeClass("disabled");
+    $(".query").attr("value", text);
+}
+
+disableSubmission = function() {
+    $(".query").addClass("disabled");
+}
+
 setFormPlaceHolders = function(id) {
     uri = $(".formfill").attr("uri") + "/" + id;
     sendRequest("GET", uri, {}, {}).done((data) => {
@@ -103,14 +112,17 @@ setFormPlaceHolders = function(id) {
                 }
             }
             $("#validatorText").text("ID Validated - Updating");
+            enableSubmission("Update");
         } else {
             console.log("ID IS INVALID");
             $("#validatorText").text("ID Nonexistent - Do not submit");
+            disableSubmission();
             clearPlaceHolders();
         }
     }).fail((xhr, status, err) => {
         console.log(">> error while validating");
-        $("#validatorText").text(">> Error while validating ID");
+        $("#validatorText").text("Cannot Validate That ID");
+        disableSubmission()
         clearPlaceHolders();
     });
 }
@@ -155,6 +167,7 @@ $(document).ready(() => {
         sendRequest("POST", submitter.attr("uri"), {}, data).done((response) => {
                 $("#statusText").text(response);
                 clearValues();
+                setFormPlaceHolders($(".validatedID").val());
             }).fail((xhr, status, err) => {
                 $("#statusText").text("Request failed, try again sucka.");
             })
@@ -182,6 +195,7 @@ $(document).ready(() => {
     $(".validatedID").on('input', (e) => {
         id = $(e.target).val();
         $("#validatorText").text("No ID Entered - Inserting");
+        enableSubmission("Insert");
         if (id != "") {
             setFormPlaceHolders(id);
         } else {

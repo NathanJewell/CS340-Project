@@ -26,20 +26,35 @@ module.exports = {
     },
 
     insert: function(req, res) {
-        sqlFile = "insertPerson.sql";
+        insertFile = "insertPerson.sql";
+        updateFile = "updatePerson.sql";
+
         data = Object.assign({}, req.params, req.body, req.query);
+
+        sqlFile = insertFile;
+        if (data.hasOwnProperty("id") && data.id != undefined) {
+            try {
+                isValidId = await dbutil.entryWithId(data["id"], "person");
+                if (isValidId) {
+                    sqlFile = updateFile;
+                }
+            } catch (e) {
+                console.log("UNABLE TO VALIDATE ID FOR PERSON UPDATE/INSERT");
+                res.status = e.status;
+                res.send(e.reason);
+            }
+        }
+
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
 
-        dbutil.fillAndExecute(query, data).then(
+        dbutil.fillAndExecute(query, data, false).then(
             (sqlData) => {
                 res.status = 200;
                 res.json(sqlData);
-                res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;
             res.send(err.reason)
         });
-
     }
 
 

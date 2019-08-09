@@ -11,9 +11,13 @@
   <title>Modify a Job</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,28 +57,30 @@
   </ul>
   <br><h5>Modify a Job</h5>
   <h6>If the Job ID entered exists, will update that job. If you're adding a job instead of updating, leave Job ID blank.</h6>
-  <form id="modifyJob">
+  <h5 id="statusText"></h5>
+  <form class="formfill" uri="job">
     <div class="form-group">
       <label for="jobID">Job ID</label>
-      <input type="text" class="form-control" id="jobID">
+      <input type="text" class="form-control validatedID" id="jobID" tag="id">
+      <h5 id="validatorText"></h5>
     </div>
     <div class="form-group">
       <label for="title">Title</label>
-      <input type="text" class="form-control" id="title">
+      <input type="text" class="form-control" id="title" tag="title" quoted=1>
     </div>
     <div class="form-group">
       <label for="income">Income</label>
-      <input type="text" class="form-control" id="income">
+      <input type="text" class="form-control" id="income" tag="income">
     </div> 
     <div class="form-group">
       <label for="company">Company</label>
-      <input type="text" class="form-control" id="company">
+      <input type="text" class="form-control" id="company" tag="company" quoted=1>
     </div>
     <div class="form-group">
       <label for="education">Education</label>
-      <input type="text" class="form-control" id="education">
+      <input type="text" class="form-control" id="education" tag="education" quoted=1>
     </div>
-  <button type="submit" class="btn btn-primary">Add/Update Job</button>
+  <input type="btn-primary" class="btn btn-primary query POST" value="Add/Update Job"></input>
 </form>
 </div>
 </body>

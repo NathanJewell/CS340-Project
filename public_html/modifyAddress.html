@@ -11,9 +11,13 @@
   <title>Modify an Address</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -53,44 +57,45 @@
   </ul>
   <br><h5>Modify an Address</h5>
   <h6>If the Address ID entered exists, will update that address. If you're adding an address instead of updating, leave Address ID blank.</h6>
-  <form id="modifyAddress">
+  <form class="fillform" uri="address">
     <div class="form-group">
       <label for="addressID">Address ID</label>
-      <input type="text" class="form-control" id="addressID">
+      <input type="text" class="form-control validatedID" id="addressID" tag="id">
+      <h5 id="validatorText"></h5>
     </div>
     <div class="form-group">
       <label for="number">House Number</label>
-      <input type="text" class="form-control" id="number">
+      <input type="text" class="form-control" id="number" tag="number">
     </div>
     <div class="form-group">
       <label for="direction">Street Direction</label>
-      <input type="text" class="form-control" id="direction">
+      <input type="text" class="form-control" id="direction" tag="direction" quoted=1>
     </div> 
     <div class="form-group">
       <label for="streetName">Street Name</label>
-      <input type="text" class="form-control" id="streetName">
+      <input type="text" class="form-control" id="streetName" tag="streetName" quoted=1>
     </div>
     <div class="form-group">
       <label for="suffix">Street Suffix</label>
-      <input type="text" class="form-control" id="suffix">
+      <input type="text" class="form-control" id="suffix" tag="suffix" quoted=1>
     </div>
     <div class="form-group">
       <label for="unit">Apt/Unit</label>
-      <input type="text" class="form-control" id="unit">
+      <input type="text" class="form-control" id="unit" tag="unit">
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" class="form-control" id="city">
+      <input type="text" class="form-control" id="city" tag="city" quoted=1>
     </div>
     <div class="form-group">
       <label for="state">State</label>
-      <input type="text" class="form-control" id="state">
+      <input type="text" class="form-control" id="state" tag="state" quoted=1>
     </div>
     <div class="form-group">
       <label for="postalCode">5-Digit Postal Code</label>
-      <input type="text" class="form-control" id="postalCode">
+      <input type="text" class="form-control" id="postalCode" tag="postalCode">
     </div>
-  <button type="submit" class="btn btn-primary">Add/Update Address</button>
+  <input type="btn-primary" class="btn btn-primary query POST" value="Add/Update Address"></input>
 </form>
 </div>
 </body>
