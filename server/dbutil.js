@@ -69,7 +69,7 @@ module.exports = {
     entryWithId: function(id, table) {
         mysql = require('./dbcon.js');
         return new Promise((resolve, reject) => {
-            queryString = "SELECT 1 FROM " + table + " WHERE table.id=" + id;
+            queryString = "SELECT 1 FROM " + table + " t WHERE t.id=" + id;
             //must reject if unfilled params remain
             mysql.pool.then((pool) => {
                 pool.query(queryString).then((sqlResponse) => {

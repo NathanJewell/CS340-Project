@@ -37,8 +37,10 @@ module.exports = {
                 if (isValidId) {
                     sqlFile = updateFile;
                 }
-            } catch(e) {
+            } catch (e) {
                 console.log("UNABLE TO VALIDATE ID FOR HOUSE UPDATE/INSERT");
+                res.status = e.status;
+                res.send(e.reason);
             }
         }
 
