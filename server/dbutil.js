@@ -76,7 +76,7 @@ module.exports = {
                     if (sqlResponse.length) {
                         resolve(true);
                     }
-                    resolve(sqlResponse);
+                    resolve(false);
 
                 }).catch((err) => {
                     reject({
