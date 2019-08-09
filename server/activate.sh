@@ -1,2 +1,2 @@
 . env/bin/activate
-. node/bin/activate
+. nodea/bin/activate

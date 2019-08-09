@@ -31,9 +31,17 @@ module.exports = {
         data = Object.assign({}, req.params, req.body, req.query);
 
         sqlFile = insertFile;
-        if (data.hasOwnProperty("id") && data.id != undefined && dbutil.entryWithId(data["id"], "house")) {
-            sqlFile = updateFile;
+        if (data.hasOwnProperty("id") && data.id != undefined) {
+            try {
+                isValidId = await dbutil.entryWithId(data["id"], "house");
+                if (isValidId) {
+                    sqlFile = updateFile;
+                }
+            } catch(e) {
+                console.log("UNABLE TO VALIDATE ID FOR HOUSE UPDATE/INSERT");
+            }
         }
+
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
 
         dbutil.fillAndExecute(query, data, false).then(
