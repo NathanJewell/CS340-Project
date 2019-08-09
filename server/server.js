@@ -50,7 +50,7 @@ app.post('/person', person.insertUpdate);
 app.delete('/person/:id?', person.delete);
 
 app.use(function(req, res, next) {
-    console.log(req);
+    //console.log(req);
     next();
 });
 app.use(function(req, res) {
