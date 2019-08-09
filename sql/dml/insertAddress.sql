@@ -19,5 +19,5 @@ VALUES (
     @city,
     @state,
     @postalCode,
-    @house
+    NULL
 )

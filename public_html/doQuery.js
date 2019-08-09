@@ -39,6 +39,9 @@ var assembleQuery = function(formParent) {
         val = child.val();
         quote = child.attr("quoted");
         placeholder = child.attr("placeholder");
+        if (key == "id") {
+            val = undefined
+        }
         if (val == "" && placeholder != undefined && key != "id") {
             val = placeholder
         }

@@ -41,6 +41,7 @@ module.exports = {
                 console.log("UNABLE TO VALIDATE ID FOR PERSON UPDATE/INSERT");
                 res.status = e.status;
                 res.send(e.reason);
+                return;
             }
         }
 
