@@ -32,22 +32,22 @@ app.use(express.urlencoded())
 //define api routes
 app.get('/address/:id?', address.select);
 app.post('/address', address.insertUpdate);
-app.delete('/address', address.delete);
+app.delete('/address/:id?', address.delete);
 app.get('/house/:id?', house.select);
 app.post('/house/:id?', house.insertUpdate);
 app.delete('/house/:id?', house.delete);
 app.get('/job/:id?', job.select);
 app.post('/job', job.insertUpdate);
-app.delete('/job', job.delete);
+app.delete('/job/:id?', job.delete);
 app.get('/neighbor', neighbor.select);
 app.post('/neighbor', neighbor.insert);
-app.delete('/neighbor', neighbor.delete);
+app.delete('/neighbor/:id?', neighbor.delete);
 app.get('/owner', owner.select);
 app.post('/owner', owner.insertUpdate);
-app.delete('/owner', owner.delete);
+app.delete('/owner/:id?', owner.delete);
 app.get('/person/:id?', person.select);
 app.post('/person', person.insertUpdate);
-app.delete('/person', person.delete);
+app.delete('/person/:id?', person.delete);
 
 app.use(function(req, res, next) {
     console.log(req);

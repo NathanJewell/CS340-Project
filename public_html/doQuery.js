@@ -184,7 +184,7 @@ $(document).ready(() => {
         var submitter = $('.formfill');
         var data = { id: $(".validatedID").val() };
 
-        sendRequest("DELETE", submitter.attr("uri"), {}, data).done((reponse) => {
+        sendRequest("DELETE", submitter.attr("uri"), data, {}).done((reponse) => {
             $("#statusText").text(JSON.stringify(response));
             clearValues();
             clearPlaceHolders();
