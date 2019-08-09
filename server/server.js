@@ -49,6 +49,12 @@ app.get('/person/:id?', person.select);
 app.post('/person', person.insertUpdate);
 app.delete('/person/:id?', person.delete);
 
+app.options('/', (req, res) => {
+    res.header("Allow", "GET, POST, DELETE, OPTIONS");
+    res.header("Acess-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
+    res.status(204);
+    res.send("OK");
+});
 app.use(function(req, res, next) {
     //console.log(req);
     next();
