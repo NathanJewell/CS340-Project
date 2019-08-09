@@ -58,6 +58,7 @@
   </ul>
   <br><h5>Modify a House</h5>
   <h6>If the House ID entered exists, will update that house. If you're adding a house instead of updating, leave House ID blank.</h6>
+  <h5 id="statusText"></h5>
   <form class="formfill" uri="house" >
     <div class="form-group">
       <label for="houseID">House ID</label>
@@ -66,7 +67,7 @@
     </div>
     <div class="form-group">
       <label for="style">Architectural Style</label>
-      <input type="text" class="form-control" id="style" tag="style">
+      <input type="text" class="form-control" id="style" tag="style" quoted=1>
     </div>
     <div class="form-group">
       <label for="constructed">Year Constructed</label>

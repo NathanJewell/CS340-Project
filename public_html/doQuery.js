@@ -6,11 +6,14 @@ var assembleQuery = function(formParent) {
         child = $(c);
         key = child.attr("tag");
         val = child.val();
+        quote = child.attr("quoted");
         placeholder = child.attr("placeholder");
         if (val == "" && placeholder != undefined) {
             val = placeholder
         }
-
+        if (quote == true) {
+            val = "\"" + val + "\""
+        }
         data[key] = val;
     });
     return data;
@@ -81,6 +84,14 @@ clearPlaceHolders = function() {
     });
 }
 
+clearValues = function() {
+    $(".formfill").find(".form-control").each((i, obj) => {
+        if ($(obj).hasClass("validatedID") == false) {
+            $(obj).val("");
+        }
+    });
+}
+
 setFormPlaceHolders = function(id) {
     uri = $(".formfill").attr("uri") + "/" + id;
     sendRequest("GET", uri, {}, {}).done((data) => {
@@ -141,10 +152,15 @@ $(document).ready(() => {
         var data = assembleQuery(submitter);
         console.log("NOW SUBMITTING");
 
-        sendRequest("POST", submitter.attr("uri"), {}, data);
-        //assemble the query from tagged html elements in the form.
-        //send POST with ajax
-        //do associated callback (create table/display message etc)
+        sendRequest("POST", submitter.attr("uri"), {}, data).done((response) => {
+                $("#statusText").text(response);
+                clearValues();
+            }).fail((xhr, status, err) => {
+                $("#statusText").text("Request failed, try again sucka.");
+            })
+            //assemble the query from tagged html elements in the form.
+            //send POST with ajax
+            //do associated callback (create table/display message etc)
     });
 
     $('.query.DELETE').on('click', (e) => {
@@ -152,7 +168,7 @@ $(document).ready(() => {
         var data = assembleQuery(submitter);
 
         sendRequest("POST", submitter.attr("uri"), data, {}).done((reponse) => {
-            $("#status").text(response);
+            $("#statusText").text(response);
         }).fail((xhr, status, err) => {
             console.log("Request failed.");
             $("#status").text("Request failed, try again sucka.");
