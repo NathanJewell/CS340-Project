@@ -17,7 +17,6 @@ module.exports = {
         dbutil.fillAndExecute(query, data).then(
             (sqlData) => {
                 res.status = 200;
-                res.json(sqlData);
                 res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;

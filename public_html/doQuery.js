@@ -93,12 +93,16 @@ clearValues = function() {
 }
 
 enableSubmission = function(text = "Add/Update") {
-    $(".query").removeClass("disabled");
-    $(".query").attr("value", text);
+    $(".POST").removeClass("disabled");
+    $(".POST").attr("value", text);
+    if (text == "Update") {
+        $(".DELETE").removeClass("disabled");
+    }
 }
 
 disableSubmission = function() {
-    $(".query").addClass("disabled");
+    $(".POST").addClass("disabled");
+    $(".DELETE").addClass("disabled");
 }
 
 setFormPlaceHolders = function(id) {
@@ -180,7 +184,7 @@ $(document).ready(() => {
         var submitter = $('.formfill');
         var data = { id: $(".validatedID").val() };
 
-        sendRequest("POST", submitter.attr("uri"), {}, data).done((reponse) => {
+        sendRequest("DELETE", submitter.attr("uri"), {}, data).done((reponse) => {
             $("#statusText").text(JSON.stringify(response));
             clearValues();
             clearPlaceHolders();
