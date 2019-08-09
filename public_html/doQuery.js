@@ -165,7 +165,7 @@ $(document).ready(() => {
         console.log("NOW SUBMITTING");
 
         sendRequest("POST", submitter.attr("uri"), {}, data).done((response) => {
-                $("#statusText").text(response);
+                $("#statusText").text(JSON.stringify(response));
                 clearValues();
                 setFormPlaceHolders($(".validatedID").val());
             }).fail((xhr, status, err) => {
@@ -178,10 +178,12 @@ $(document).ready(() => {
 
     $('.query.DELETE').on('click', (e) => {
         var submitter = $('.formfill');
-        var data = assembleQuery(submitter);
+        var data = { id: $(".validatedID").val() };
 
-        sendRequest("POST", submitter.attr("uri"), data, {}).done((reponse) => {
-            $("#statusText").text(response);
+        sendRequest("POST", submitter.attr("uri"), {}, data).done((reponse) => {
+            $("#statusText").text(JSON.stringify(response));
+            clearValues();
+            clearPlaceHolders();
         }).fail((xhr, status, err) => {
             console.log("Request failed.");
             $("#status").text("Request failed, try again sucka.");

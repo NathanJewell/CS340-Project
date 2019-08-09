@@ -1,0 +1,1 @@
+DELETE FROM address WHERE address.id = @id

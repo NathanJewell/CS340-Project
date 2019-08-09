@@ -25,7 +25,7 @@ module.exports = {
         });
     },
 
-    insert: function(req, res) {
+    insertUpdate: async function(req, res) {
         insertFile = "insertPerson.sql";
         updateFile = "updatePerson.sql";
 
@@ -45,6 +45,20 @@ module.exports = {
             }
         }
 
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+
+        dbutil.fillAndExecute(query, data, false).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
+    },
+    delete: function(req, res) {
+        sqlFile = "deletePerson.sql";
+        data = Object.assign({}, req.params, req.body, req.query);
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
 
         dbutil.fillAndExecute(query, data, false).then(
