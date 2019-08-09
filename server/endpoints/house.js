@@ -17,7 +17,6 @@ module.exports = {
             (sqlData) => {
                 res.status = 200;
                 res.json(sqlData);
-                res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;
             res.send(err.reason)
@@ -50,7 +49,6 @@ module.exports = {
             (sqlData) => {
                 res.status = 200;
                 res.json(sqlData);
-                res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;
             res.send(err.reason)
@@ -69,7 +67,6 @@ module.exports = {
             (sqlData) => {
                 res.status = 200;
                 res.json(sqlData);
-                res.send("Query Successful")
             }).catch((err) => {
             res.status = err.status;
             res.send(err.reason)

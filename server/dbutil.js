@@ -73,10 +73,10 @@ module.exports = {
             //must reject if unfilled params remain
             mysql.pool.then((pool) => {
                 pool.query(queryString).then((sqlResponse) => {
-                    if (sqlResponse.hasOwnProperty("1")) {
+                    if (sqlResponse.length) {
                         resolve(true);
                     }
-                    resolve(false);
+                    resolve(sqlResponse);
 
                 }).catch((err) => {
                     reject({
