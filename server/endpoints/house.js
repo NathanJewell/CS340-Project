@@ -24,7 +24,7 @@ module.exports = {
         });
     },
 
-    insertUpdate: function(req, res) {
+    insertUpdate: async function(req, res) {
         insertFile = "insertHouse.sql";
         updateFile = "updateHouse.sql";
 
