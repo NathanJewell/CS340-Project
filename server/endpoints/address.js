@@ -38,7 +38,7 @@ module.exports = {
                 }
             } catch (e) {
                 console.log("UNABLE TO VALIDATE ID FOR ADDRESS UPDATE/INSERT");
-                res.status = e.status;
+                res.status = 400;
                 res.send(e.reason);
                 return;
             }

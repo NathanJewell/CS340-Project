@@ -2,5 +2,5 @@ UPDATE job SET
 title = @title,
 income = @income,
 company = @company,
-education = @education,
+education = @education
 WHERE id = @id

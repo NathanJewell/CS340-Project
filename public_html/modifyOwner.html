@@ -11,9 +11,13 @@
   <title>Modify an Owner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,22 +56,22 @@
     </li>
   </ul>
   <br><h5>Modify an Owner</h5>
-  <h6>If the first House ID entered exists with that Person ID, will update that owner relationship with that person to be with the second House ID.</h6>
-  <h6>If you're adding an owner instead of updating, leave the first House ID blank and only enter the Person ID and second House ID.</h6>
-  <form id="modifyOwner">
+  <h6>Enter the house and person ID to add a house. If the relation allready exists, this will not work.</h6>
+  <h5 id="statusText"></h5>
+  <form class="formfill" uri="owner">
     <div class="form-group">
       <label for="personID">Person ID</label>
-      <input type="text" class="form-control" id="personID">
+      <input type="text" class="form-control validatedIDTable" table="person" id="personID" tag="person_id">
+      <h6 class="status" id="saldkfj"></h6>
+      <div class="table" id="jdafj"></div>
     </div>
     <div class="form-group">
-      <label for="house1ID">House 1 ID</label>
-      <input type="text" class="form-control" id="house1ID">
+      <label for="houseID">House ID</label>
+      <input type="text" class="form-control validatedIDTable" table="house" id="houseID" tag=house_id>
+      <h6 class="status" id="eiavnv"></h6>
+      <div class="table" id="fjjjd"></div>
     </div>
-    <div class="form-group">
-      <label for="house2ID">House 2 ID</label>
-      <input type="text" class="form-control" id="house2ID">
-    </div>
-  <button type="submit" class="btn btn-primary">Add/Update an Owner</button>
+  <div type="btn-primary" class="btn btn-primary query POST" value="Insert Owner">Insert Owner</div>
 </form>
 </div>
 </body>

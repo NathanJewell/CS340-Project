@@ -6,6 +6,6 @@ INSERT INTO neighbor(
 	pidb	
 )
 VALUES(
-	@person_1_id_input,
-	@person_2_id_input	
+	@person_1_id,
+	@person_2_id
 );

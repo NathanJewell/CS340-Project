@@ -57,6 +57,7 @@
   </ul>
   <br><h5>Modify an Address</h5>
   <h6>If the Address ID entered exists, will update that address. If you're adding an address instead of updating, leave Address ID blank.</h6>
+  <h5 id="statusText"></h5>
   <form class="formfill" uri="address">
     <div class="form-group">
       <label for="addressID">Address ID</label>
@@ -95,8 +96,8 @@
       <label for="postalCode">5-Digit Postal Code</label>
       <input type="text" class="form-control" id="postalCode" tag="postalCode">
     </div>
-  <input type="btn-primary" class="btn btn-primary query POST" value="Add/Update Address"></input>
-  <input type="btn-primary" class="btn btn-primary query DELETE" value="Delete"></input>
+  <div type="btn-primary" class="btn btn-primary query POST" value="Add/Update Address">Add/Update Address</div>
+  <div type="btn-primary" class="btn btn-primary query DELETE" value="Delete">Delete</div>
 </form>
 </div>
 </body>

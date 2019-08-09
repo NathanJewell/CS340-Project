@@ -25,7 +25,10 @@
     //console.log("Found server.");
 //} else {
     //console.log("UNABLE TO CONTACT THE SERVER. PLEASE CONTACT NATHAN JEWELL");
-//}
+//} 
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
 var BaseApiUrl = "http://flip2.engr.oregonstate.edu:5265/"
 
 var assembleQuery = function(formParent) {
@@ -91,15 +94,15 @@ tryTableLoad = function() {
 setTableData = function(tableSelector, data) {
     //if the table element exists and defines a uri, we are going to load that collection automagically
     let columns = []
-    for (let [k, v] of Object.entries(response[0])) {
+    for (let [k, v] of Object.entries(data[0])) {
         if (v != undefined) {
             columns.push({ title: k, field: k });
         }
     }
     var table = new Tabulator(tableSelector, {
-        height: 100,
+        height: 75,
         data: data,
-        layout: 'fitColumns',
+        layout: 'fitDataFill',
         columns: columns
     });
 }
@@ -122,7 +125,7 @@ clearValues = function() {
 
 enableSubmission = function(text = "Add/Update") {
     $(".POST").removeClass("disabled");
-    $(".POST").attr("value", text);
+    $(".POST").text(text);
     if (text == "Update") {
         $(".DELETE").removeClass("disabled");
     }
@@ -159,6 +162,46 @@ setFormPlaceHolders = function(id) {
             clearPlaceHolders();
         });
     }
+}
+
+tryValidateIdSetTable = function(e) {
+    table = '#' + $(e).parent().find(".table").attr('id');
+    statusText = '#' +  $(e).parent().find(".status").attr("id");
+    id = $(e).val();
+    if(id == ""){
+        setTableData(table, [{}]);
+        $(statusText).text("ID Does not Exist- Do not submit");
+        disableSubmission();
+        return;
+    }
+    uri = $(e).attr("table") + "/" + id;
+    sendRequest("GET", uri, {}, {}).done((data) => {
+        if (data.length) {
+            setTableData(table, data);
+            $(statusText).text("ID is Valid - See table for info");
+            enableSubmission("Insert");
+        } else {
+            console.log("ID IS INVALID");
+            setTableData(table, [{}]);
+            $(statusText).text("ID Does not Exist- Do not submit");
+            disableSubmission();
+        }
+    }).fail((xhr, status, err) => {
+        console.log(">> error while validating");
+        setTableData(table, [{}]);
+        $(statusText).text("Cannot Validate ID");
+        disableSubmission()
+    });
+}
+
+clearTables = function() {
+    $(".table").each((e, obj) => {
+        id = "#" + $(obj).attr('id');
+        setTableData(table, [{}]);
+    });
+    $(".status").each((e, obj) => {
+        $(obj).text("");
+    });
 }
 
 
@@ -198,12 +241,13 @@ $(document).ready(() => {
         var data = assembleQuery(submitter);
         console.log("NOW SUBMITTING");
 
-        sendRequest("POST", submitter.attr("uri"), {}, data).done((response) => {
+        sendRequest("POST", submitter.attr("uri"), {}, data).done((response, status, xhr) => {
                 $("#statusText").text(JSON.stringify(response));
                 clearValues();
+                clearTables();
                 setFormPlaceHolders($(".validatedID").val());
             }).fail((xhr, status, err) => {
-                $("#statusText").text("Request failed, try again sucka. (Does the PK allready exist?)");
+                $("#statusText").text("Request failed, try again. Is the form filled? (Does the PK allready exist?)\n" + JSON.stringify(xhr));
             })
             //assemble the query from tagged html elements in the form.
             //send POST with ajax
@@ -240,6 +284,10 @@ $(document).ready(() => {
         }
     });
 
+    $(".validatedIDTable").on('input', (e) => {
+        tryValidateIdSetTable(e.target);
+    });
+
     $(".btn").on('click', (e) => {
         $(e.target).blur();
     });
@@ -259,7 +307,7 @@ $(document).ready(() => {
     });
 
     tryTableLoad();
-
+    clearValues();
     $("#validatorText").text("No ID Entered - Inserting");
     if ($(".validatedID").val() != "") {
         setFormPlaceHolders($(".validatedID").val());

@@ -11,9 +11,13 @@
   <title>Add a Neighbor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,16 +56,22 @@
     </li>
   </ul>
   <br><h5>Add a Neighbor</h5>
-  <form id="modifyNeighbor">
+  <h6>Put two person ids to create a relation</h6>
+  <h5 id="statusText"></h5>
+  <form class="formfill" uri="neighbor">
     <div class="form-group">
       <label for="person1ID">Person 1 ID</label>
-      <input type="text" class="form-control" id="person1ID">
+      <input type="text" class="form-control validatedIDTable" table="person" id="person1ID" tag="person_1_id">
+      <h6 class="status" id="jfdfd"></h6>
+      <div class="table" id="jjjjjj"></div>
     </div>
     <div class="form-group">
       <label for="person2ID">Person 2 ID</label>
-      <input type="text" class="form-control" id="person2ID">
+      <input type="text" class="form-control validatedIDTable" table="person" id="person2ID" tag="person_2_id">
+      <h6 class="status" id="nvneid"></h6>
+      <div class="table" id="nnnuuuu"></div>
     </div>
-  <button type="submit" class="btn btn-primary">Add Neighbor</button>
+  <div type="btn-primary" class="btn btn-primary query POST" value="Insert Neighbor">Insert Neighbor</div>
 </form>
 </div>
 </body>
