@@ -29,7 +29,8 @@
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
-var BaseApiUrl = "http://flip2.engr.oregonstate.edu:5265/"
+// var BaseApiUrl = "http://flip2.engr.oregonstate.edu:5265/"
+var BaseApiUrl = "http://flip1.engr.oregonstate.edu:6565/"
 
 var assembleQuery = function(formParent) {
     data = {};
