@@ -34,7 +34,6 @@
      <li class= "active"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Search/Filter <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="personSearch.html">Search for a Person</a></li>
-        <li><a href="jobSearch.html">Filter By Job</a></li>                        
         <li><a href="neighborSearch.html">Search for a Person's Neighbors</a></li>                        
         <li><a href="ownerSearch.html">Identify an Owner of a House</a></li>                        
       </ul></li> 
@@ -51,23 +50,27 @@
       </ul>
     </li>
   </ul>
-  <br><h5>Search for a Person</h5>
-  <form id="personSearch">
+  <br><h5>Search for a Person or Filter People by Job</h5>
+  <form id="personSearch" class = "formfill" uri = "person">
     <div class="form-group">
       <label for="fName">First Name</label>
-      <input type="text" class="form-control" id="fname">
+      <input type="text" class="form-control" id="fname" tag="fname" quoted=1>
     </div>
     <div class="form-group">
       <label for="lName">Last Name</label>
-      <input type="text" class="form-control" id="lname">
+      <input type="text" class="form-control" id="lname" tag = "lname" quoted=1>
     </div>
+    <div>
+    <label for ="jobSearch">Filter by Job</label>
     <select class="form-control" tag="job">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Jobs
       <span class="caret"></span></button>
       <option value="example">One</option>
       <option value="example1">Two</option>
       <option value="example2">Three</option>
+    </select>
     </div> 
+    <br>
   <button type="submit" class="btn btn-primary">Search</button>
 </form>
 </div>
