@@ -41,16 +41,14 @@ var assembleQuery = function(formParent, paginated=false) {
         val = child.val();
         quote = child.attr("quoted");
         placeholder = child.attr("placeholder");
-        if (key == "id") {
+        if (key == "id" && val == "") {
             val = undefined
         }
         if (val == "" && placeholder != undefined && key != "id") {
             val = placeholder
         }
         if (quote == true) {
-            console.log(c)
             let type = child.parent().find(".searchType");
-            console.log(type)
             if (type.length) {
                 let searchString = type.find(".active").attr("value");
                 val = searchString.replace("{}", val)
@@ -198,7 +196,7 @@ tryValidateIdSetTable = function(e) {
         if (data.length) {
             setTableData(table, data);
             $(statusText).text("ID is Valid - See table for info");
-            enableSubmission("Insert");
+            enableSubmission();
         } else {
             console.log("ID IS INVALID");
             setTableData(table, [{}]);
@@ -235,6 +233,7 @@ $(document).ready(() => {
     //ON EACH INPUT ELEMENT USE THE form-input class
 
     $('.query.GET').on('click', (e) => {
+        if ($(this).hasClass("disabled")) { return; }
         var submitter = $('.formfill');
         var data = assembleQuery(submitter);
 
@@ -256,6 +255,7 @@ $(document).ready(() => {
     });
 
     $('.query.POST').on('click', (e) => {
+        if ($(e.target).hasClass("disabled")) { return; }
         var submitter = $('.formfill');
         var data = assembleQuery(submitter, paginated=true);
         console.log("NOW SUBMITTING");
@@ -280,6 +280,7 @@ $(document).ready(() => {
     });
 
     $('.query.DELETE').on('click', (e) => {
+        if ($(this).hasClass("disabled")) { return; }
         var submitter = $('.formfill');
         var data = { id: $(".validatedID").val() };
 
