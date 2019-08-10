@@ -11,9 +11,13 @@
   <title>Identify an Owner of a House</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -52,16 +56,18 @@
   </ul>
   <br><h5>Identify Owner(s) of a House</h5>
 <h6 id="statusText"></h6>
-<form id="ownerSearch" uri="owner/search">
+<form class="formfill" uri="owner/search">
   <div class="form-group">
     <label for="houseid">House ID</label>
     <input type="text" class="form-control validatedIDTable" table="house" id="houseid" tag="houseid">
     <h6 class="status" id="skafls"></h6>
     <div class="table" id="jnnnnn"></div>
   </div>
-  <input type="btn-primary" class="btn btn-primary query POST">Search</input>
-  <div id="resultsTable" limit="20"></div>
+  <div type="btn-primary" class="btn btn-primary query POST">Search</div>
 </form>
+<br>
+<h5 id="resultsText"></h5>
+<div id="resultsTable" limit="20"></div>
 </div>
 </body>
 </html>

@@ -99,16 +99,19 @@ tryTableLoad = function() {
     }
 }
 
-setTableData = function(tableSelector, data) {
+setTableData = function(tableSelector, data, height=75) {
     //if the table element exists and defines a uri, we are going to load that collection automagically
     let columns = []
+    if (data[0] == undefined) {
+        data = [{}];
+    }
     for (let [k, v] of Object.entries(data[0])) {
         if (v != undefined) {
             columns.push({ title: k, field: k });
         }
     }
     var table = new Tabulator(tableSelector, {
-        height: 75,
+        height: height,
         data: data,
         layout: 'fitDataFill',
         columns: columns
@@ -133,6 +136,7 @@ clearValues = function() {
 
 enableSubmission = function(text = "Add/Update") {
     $(".POST").removeClass("disabled");
+    if ($("#resultsTable").length) { return ;}
     $(".POST").text(text);
     if (text == "Update") {
         $(".DELETE").removeClass("disabled");
@@ -252,13 +256,14 @@ $(document).ready(() => {
         sendRequest("POST", submitter.attr("uri"), {}, data).done((response, status, xhr) => {
                 if ($("#resultsTable").length) {
                     $("#statusText").text("Search Successfull");
-                    setTableData("#resultsTable", response)
+                    $("#resultsText").text("See all " + response.length + " results below...");
+                    setTableData("#resultsTable", response, 50 + 30 * response.length)
                 } else {
                     $("#statusText").text(JSON.stringify(response));
+                    setFormPlaceHolders($(".validatedID").val());
+                    clearValues();
+                    clearTables();
                 }
-                clearValues();
-                clearTables();
-                setFormPlaceHolders($(".validatedID").val());
             }).fail((xhr, status, err) => {
                 $("#statusText").text("Request failed, try again. Is the form filled? (Does the PK allready exist?)\n" + JSON.stringify(xhr));
             })
@@ -322,11 +327,38 @@ $(document).ready(() => {
     tryTableLoad();
     clearValues();
     $("#validatorText").text("No ID Entered - Inserting");
-    if ($(".validatedID").val() != "") {
-        setFormPlaceHolders($(".validatedID").val());
+    console.log("A");
+    if ($("#resultsTable").length) {
+        console.log("A");
+        if($("#education").length) {
+            console.log("A");
+            sendRequest("GET", "job/education", {}, {}).done((response, status, xhr) => {
+                console.log(response);
+                $("#education").append("<option value=\"%%\">ANY</option>")
+                for ( let obj of response) {
+                    console.log(obj)
+                    $("#education").append("<option value=\"" + obj["education"] + "%\">" + obj["education"] + "</option>")
+                }
+            }).fail((err) => {
+                $("#statusText").text("COULD NOT INITIALIZE EDUCATION OPTIONS");
+                console.log("COULD NOT INITIALIZE EDUCATION OPTIONS");
+            });
+        }
     } else {
-        clearPlaceHolders();
-        disableSubmission("Update");
-        enableSubmission("Insert");
+        if ($(".validatedID").val() != "") {
+            setFormPlaceHolders($(".validatedID").val());
+        } else {
+            clearPlaceHolders();
+            disableSubmission("Update");
+            enableSubmission("Insert");
+        }
     }
 });
+
+$('#formfill').on('keyup keypress', function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) { 
+      e.preventDefault();
+      return false;
+    }
+  });

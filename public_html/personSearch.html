@@ -11,9 +11,13 @@
   <title>Search for a Person</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+  <link rel="stylesheet" href="./neighborhood.css">
+  <script type='text/javascript' src="./doQuery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -51,7 +55,8 @@
     </li>
   </ul>
   <br><h5>Search for a Person or Filter People by Job</h5>
-  <form id="personSearch" class = "formfill" uri = "person">
+  <h6 id="statusText"></h6>
+  <form id="personSearch" class = "formfill" uri = "person/search">
     <div class="form-group">
       <label for="fName">First Name</label>
       <input type="text" class="form-control" id="fname" tag="fname" quoted=1>
@@ -61,18 +66,17 @@
       <input type="text" class="form-control" id="lname" tag = "lname" quoted=1>
     </div>
     <div>
-    <label for ="jobSearch">Filter by Job</label>
-    <select class="form-control" tag="job">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Jobs
+    <label for ="education">Filter By Job Education</label>
+    <select class="form-control" tag="job" id="education" tag="education" quoted=1>
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Education Type
       <span class="caret"></span></button>
-      <option value="example">One</option>
-      <option value="example1">Two</option>
-      <option value="example2">Three</option>
     </select>
     </div> 
     <br>
-  <button type="submit" class="btn btn-primary">Search</button>
+  <div type="btn-primary" class="btn btn-primary query POST">Search</div>
 </form>
+<h5 id="resultsText"></h5>
+<div id="resultsTable" limit="20"></div>
 </div>
 </body>
 </html>
