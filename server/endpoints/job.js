@@ -69,8 +69,8 @@ module.exports = {
         });
     },
 
-    allTitles: function(req, res) {
-        sqlFile = "findAllJobTypes.sql"
+    allEducation: function(req, res) {
+        sqlFile = "findAllEducation.sql"
         query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
         dbutil.fillAndExecute(query, {}, false).then(
             (sqlData) => {
