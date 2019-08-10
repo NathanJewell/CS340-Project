@@ -1,0 +1,1 @@
+SELECT j.education FROM job j GROUP BY j.education ORDER BY j.education
