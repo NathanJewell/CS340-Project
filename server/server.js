@@ -42,7 +42,7 @@ app.post('/job', job.insertUpdate);
 app.delete('/job/:id?', job.delete);
 app.get('/neighbor', neighbor.select);
 app.post('/neighbor', neighbor.insert);
-app.post('/neighbor/search');
+app.post('/neighbor/search', neighbor.search);
 app.delete('/neighbor/:id?', neighbor.delete);
 app.get('/owner', owner.select);
 app.post('/owner', owner.insert);
