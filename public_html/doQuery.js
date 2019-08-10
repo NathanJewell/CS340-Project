@@ -32,7 +32,8 @@ function escapeRegExp(string) {
  var BaseApiUrl = "http://flip2.engr.oregonstate.edu:5265/"
 //var BaseApiUrl = "http://flip1.engr.oregonstate.edu:6565/"
 
-var assembleQuery = function(formParent) {
+var currentPage = 1;
+var assembleQuery = function(formParent, paginated=false) {
     data = {};
     formParent.find(".form-control").each((i, c) => {
         child = $(c);
@@ -51,6 +52,10 @@ var assembleQuery = function(formParent) {
         }
         data[key] = val;
     });
+    if (paginated) {
+        data["limit"] = $("#resultsTable").attr("limit");
+        data["offset"] = (currentPage - 1) * data["limit"];
+    }
     return data;
     //for child of form parent with "tag" attribute
     //add to object a new attribute with key=valueof("tag"), value=formFieldValue
@@ -66,7 +71,6 @@ var sendRequest = function(method, uri, qstringData, jsonBodyData) {
     });
 };
 
-var currentPage = 1
 
 tryTableLoad = function() {
     //if the table element exists and defines a uri, we are going to load that collection automagically
@@ -242,11 +246,16 @@ $(document).ready(() => {
 
     $('.query.POST').on('click', (e) => {
         var submitter = $('.formfill');
-        var data = assembleQuery(submitter);
+        var data = assembleQuery(submitter, paginated=true);
         console.log("NOW SUBMITTING");
 
         sendRequest("POST", submitter.attr("uri"), {}, data).done((response, status, xhr) => {
-                $("#statusText").text(JSON.stringify(response));
+                if ($("#resultsTable").length) {
+                    $("#statusText").text("Search Successfull");
+                    setTableData("#resultsTable", response)
+                } else {
+                    $("#statusText").text(JSON.stringify(response));
+                }
                 clearValues();
                 clearTables();
                 setFormPlaceHolders($(".validatedID").val());

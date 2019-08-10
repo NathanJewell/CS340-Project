@@ -69,6 +69,21 @@ module.exports = {
             res.status = err.status;
             res.send(err.reason)
         });
+    },
+
+    search: function(req, res) {
+        sqlFile = "personSearch.sql";
+        data = Object.assign({}, req.params, req.body, req.query);
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+
+        dbutil.fillAndExecute(query, data, false).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
     }
 
 

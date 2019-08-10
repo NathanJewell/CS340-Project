@@ -67,6 +67,20 @@ module.exports = {
             res.status = err.status;
             res.send(err.reason)
         });
+    },
+
+    allTitles: function(req, res) {
+        sqlFile = "findAllJobTypes.sql"
+        query = dbutil.loadQueryString(defaults.dmlDir + sqlFile);
+        dbutil.fillAndExecute(query, {}, false).then(
+            (sqlData) => {
+                res.status = 200;
+                res.json(sqlData);
+            }).catch((err) => {
+            res.status = err.status;
+            res.send(err.reason)
+        });
+
     }
 
 

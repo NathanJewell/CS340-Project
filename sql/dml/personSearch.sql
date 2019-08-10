@@ -1,4 +1,2 @@
 --given person name find id
-SELECT P.id FROM person P WHERE fname LIKE '%' + @first + '%' AND lname LIKE '%' + @last + '%'
-
-SELECT P.id FROM person P INNER JOIN job J ON P.job == J.id WHERE P.title LIKE '%' + @title + '%' 
+SELECT * FROM person p INNER JOIN job j ON p.job = j.id WHERE p.fname LIKE @first AND lname LIKE @last AND j.education LIKE @education

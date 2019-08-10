@@ -50,37 +50,17 @@
       </ul>
     </li>
   </ul>
-  <br><h5>Identify Owner of a House</h5>
-<form id="ownerSearch" class = "formfill" uri = "house">
-    <div class="form-group">
-      <label for="streetNumber">Street Number</label>
-      <input type="text" class="form-control" id="streetNumber" tag="streetNumber" quoted=1>
-    </div>
-    <div class="form-group">
-      <label for="streetName">Street Name</label>
-      <input type="text" class="form-control" id="streetName" tag="streetName" quoted = 1>
-    </div>
-    <div class="form-group">
-      <label for="suffix">Suffix</label>
-      <input type="text" class="form-control" id="suffix" tag = "suffix" quoted = 1>
-    </div>
-    <div class="form-group">
-      <label for="unit">Unit</label>
-      <input type="text" class="form-control" id="unit" tag = "unit" quoted=1>
-    </div>
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" class="form-control" id="city" tag = "city" quoted=1>
-     </div>
-     <div class="form-group">
-      <label for="state">State</label>
-      <input type="text" class="form-control" id="state" tag = "state" quoted=1>
-     </div>
-     <div class="form-group">
-      <label for="postalCode">5-Digit Postal Code</label>
-      <input type="text" class="form-control" id="postalCode" tag = "postalCode" quoted=1>
-     </div>
-  <button type="submit" class="btn btn-primary">Search</button>
+  <br><h5>Identify Owner(s) of a House</h5>
+<h6 id="statusText"></h6>
+<form id="ownerSearch" uri="owner/search">
+  <div class="form-group">
+    <label for="houseid">House ID</label>
+    <input type="text" class="form-control validatedIDTable" table="house" id="houseid" tag="houseid">
+    <h6 class="status" id="skafls"></h6>
+    <div class="table" id="jnnnnn"></div>
+  </div>
+  <input type="btn-primary" class="btn btn-primary query POST">Search</input>
+  <div id="resultsTable" limit="20"></div>
 </form>
 </div>
 </body>
