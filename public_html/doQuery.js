@@ -48,6 +48,13 @@ var assembleQuery = function(formParent, paginated=false) {
             val = placeholder
         }
         if (quote == true) {
+            console.log(c)
+            let type = child.parent().find(".searchType");
+            console.log(type)
+            if (type.length) {
+                let searchString = type.find(".active").attr("value");
+                val = searchString.replace("{}", val)
+            }
             val = "\"" + val + "\""
         }
         data[key] = val;
@@ -327,16 +334,11 @@ $(document).ready(() => {
     tryTableLoad();
     clearValues();
     $("#validatorText").text("No ID Entered - Inserting");
-    console.log("A");
     if ($("#resultsTable").length) {
-        console.log("A");
         if($("#education").length) {
-            console.log("A");
             sendRequest("GET", "job/education", {}, {}).done((response, status, xhr) => {
-                console.log(response);
                 $("#education").append("<option value=\"%%\">ANY</option>")
                 for ( let obj of response) {
-                    console.log(obj)
                     $("#education").append("<option value=\"" + obj["education"] + "%\">" + obj["education"] + "</option>")
                 }
             }).fail((err) => {

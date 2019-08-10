@@ -55,17 +55,42 @@
     </li>
   </ul>
   <br><h5>Search for a Person's Neighbors</h5>
-<form id="neighborSearch" class = "formfill" uri="neighbor">
+  <h6 id="statusText"></h6>
+  <form id="personSearch" class = "formfill" uri = "neighbor/search">
     <div class="form-group">
       <label for="fName">First Name</label>
       <input type="text" class="form-control" id="fname" tag="fname" quoted=1>
-    </div>
+      <div class="btn-group btn-group-toggle searchType" data-toggle="buttons">
+        <label class="btn btn-info active" value="{}">
+          <input type="radio" autocomplete="off" checked> Equal
+        </label>
+        <label class="btn btn-info" value="{}%">
+          <input type="radio" autocomplete="off"> Starts With
+        </label>
+        <label class="btn btn-info" value="%{}%">
+          <input type="radio" autocomplete="off"> Contains
+        </label>
+      </div>
+    </div> 
     <div class="form-group">
       <label for="lName">Last Name</label>
-      <input type="text" class="form-control" id="lname" tag="fname" quoted=1>
+      <input type="text" class="form-control" id="lname" tag = "lname" quoted=1>
+      <div class="btn-group btn-group-toggle searchType" data-toggle="buttons">
+        <label class="btn btn-info active" value="{}">
+          <input type="radio" autocomplete="off" checked> Equal
+        </label>
+        <label class="btn btn-info" value="{}%">
+          <input type="radio" autocomplete="off"> Starts With
+        </label>
+        <label class="btn btn-info" value="%{}%">
+          <input type="radio" autocomplete="off"> Contains
+        </label>
+      </div>
     </div>
-  <button type="submit" class="btn btn-primary">Search</button>
+  <div type="btn-primary" class="btn btn-primary query POST">Search</div>
 </form>
+<h5 id="resultsText"></h5>
+<div id="resultsTable" limit="20"></div>
 </div>
 </body>
 </html>
