@@ -296,12 +296,16 @@ $(document).ready(() => {
         if ($(this).hasClass("disabled")) { return; }
         var submitter = $('.formfill');
         var data = { id: $(".validatedID").val() };
+        if ($(".formfill").attr("uri") == "owner") {
+            data = assembleQuery(submitter, false);
+        }
 
         sendRequest("DELETE", submitter.attr("uri"), data, {}).done((response) => {
             console.log(response);
             $("#statusText").text(JSON.stringify(response));
             clearValues();
             clearPlaceHolders();
+            setFormPlaceHolders($(".validatedID").val());
         }).fail((xhr, status, err) => {
             console.log("Request failed.");
             $("#status").text("Request failed, try again sucka.");
