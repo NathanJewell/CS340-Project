@@ -304,8 +304,10 @@ $(document).ready(() => {
             console.log(response);
             $("#statusText").text(JSON.stringify(response));
             clearValues();
+            clearTables();
             clearPlaceHolders();
             setFormPlaceHolders($(".validatedID").val());
+            $(".DELETE").addClass("disabled");
         }).fail((xhr, status, err) => {
             console.log("Request failed.");
             $("#status").text("Request failed, try again sucka.");
