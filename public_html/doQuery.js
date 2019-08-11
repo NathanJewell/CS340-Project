@@ -197,6 +197,19 @@ tryValidateIdSetTable = function(e) {
             setTableData(table, data);
             $(statusText).text("ID is Valid - See table for info");
             enableSubmission();
+            if ($(".formfill").attr("uri") == "owner") {
+                var submitter = $('.formfill');
+                var data = assembleQuery(submitter, paginated=false);
+                sendRequest("GET", "owner/single", data, {}).done((response) => {
+                    if(response.length) {
+                        $(".DELETE").removeClass("disabled");
+                    } else {
+                        $(".DELETE").addClass("disabled");
+                    }
+                }).fail((err) => {
+                    $(".DELETE").addClass("disabled");
+                });
+            }
         } else {
             console.log("ID IS INVALID");
             setTableData(table, [{}]);
