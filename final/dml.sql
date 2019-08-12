@@ -161,6 +161,7 @@ unit = @unit,
 city = @city,
 state = @state,
 postalCode = @postalCode
+WHERE id = @id
 -- Molly
 
 -- update the changeable house parameters for a given address (but won't change the 

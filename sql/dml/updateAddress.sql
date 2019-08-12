@@ -7,3 +7,4 @@ unit = @unit,
 city = @city,
 state = @state,
 postalCode = @postalCode
+WHERE id = @id
